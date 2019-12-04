@@ -1,1 +1,0 @@
-# derekantrican.github.io
