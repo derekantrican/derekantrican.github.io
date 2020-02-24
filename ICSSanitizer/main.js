@@ -66,7 +66,7 @@ function modifyCalendar(component){
 }
 
 function modifyEvent(vevent){
-    vevent = new ICAL.Event(vevent, {strictExceptions: true});
+    vevent = new ICAL.Event(vevent);
 
     switch ($("input[name=eventTitle]:checked").val()){
         case "scramble":
