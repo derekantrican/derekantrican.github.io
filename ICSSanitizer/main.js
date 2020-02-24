@@ -30,9 +30,9 @@ function modifyCalendar(component){
     switch ($("input[name=calName]:checked").val()){
         case "scramble":
             if (component.hasProperty("name"))
-                component.getFirstProperty("name").setValue(component.getFirstPropertyValue("name").obfuscate());
+                component.getFirstProperty("name").setValue(md5(component.getFirstPropertyValue("name")));
             else if (component.hasProperty("x-wr-calname"))
-                component.getFirstProperty("x-wr-calname").setValue(component.getFirstPropertyValue("x-wr-calname").obfuscate());
+                component.getFirstProperty("x-wr-calname").setValue(md5(component.getFirstPropertyValue("x-wr-calname")));
             break;
         case "remove":
             if (component.hasProperty("name"))
@@ -45,7 +45,7 @@ function modifyCalendar(component){
     switch ($("input[name=calDesc]:checked").val()){
         case "scramble":
             if (component.hasProperty("x-wr-caldesc"))
-                component.getFirstProperty("x-wr-caldesc").setValue(component.getFirstPropertyValue("x-wr-caldesc").obfuscate());
+                component.getFirstProperty("x-wr-caldesc").setValue(md5(component.getFirstPropertyValue("x-wr-caldesc")));
             break;
         case "remove":
             if (component.hasProperty("x-wr-caldesc"))
@@ -56,7 +56,7 @@ function modifyCalendar(component){
     switch ($("input[name=calProdid]:checked").val()){
         case "scramble":
             if (component.hasProperty("prodid"))
-                component.getFirstProperty("prodid").setValue(component.getFirstPropertyValue("prodid").obfuscate());
+                component.getFirstProperty("prodid").setValue(md5(component.getFirstPropertyValue("prodid")));
             break;
         case "remove":
             if (component.hasProperty("prodid"))
@@ -70,7 +70,7 @@ function modifyEvent(vevent){
 
     switch ($("input[name=eventTitle]:checked").val()){
         case "scramble":
-            vevent.summary = vevent.summary.obfuscate();
+            vevent.summary = md5(vevent.summary);
             break;
         case "remove":
             vevent.summary = "";
@@ -79,7 +79,7 @@ function modifyEvent(vevent){
     
     switch ($("input[name=eventDesc]:checked").val()){
         case "scramble":
-            vevent.description = vevent.description.obfuscate();
+            vevent.description = md5(vevent.description);
             break;
         case "remove":
             vevent.description = "";
@@ -88,7 +88,7 @@ function modifyEvent(vevent){
 
     switch ($("input[name=eventLoc]:checked").val()){
         case "scramble":
-            vevent.location = vevent.location.obfuscate();
+            vevent.location = md5(vevent.location);
             break;
         case "remove":
             vevent.location = "";
@@ -97,21 +97,10 @@ function modifyEvent(vevent){
             
     switch ($("input[name=eventUid]:checked").val()){
         case "scramble":
-            vevent.uid = vevent.uid.obfuscate();
+            vevent.uid = md5(vevent.uid);
             break;
         case "remove":
             vevent.uid = "";
             break;
     }
 }
-
-String.prototype.obfuscate = function() {
-  var hash = 0, i, chr;
-  if (this.length === 0) return hash;
-  for (i = 0; i < this.length; i++) {
-    chr   = this.charCodeAt(i);
-    hash  = ((hash << 5) - hash) + chr;
-    hash |= 0; // Convert to 32bit integer
-  }
-  return hash;
-};
