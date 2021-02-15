@@ -146,6 +146,7 @@ body {
   font-feature-settings: "liga", "kern";
   font-size: var(--ui-typography-p);
   font-weight: 400;
+  height: 100%;
   line-height: var(--ui-typography-p-leading);
   margin: 0 auto;
   text-rendering: optimizeLegibility;
@@ -616,7 +617,20 @@ div label[for=ui-component-toggle__yearly] {
 
 /*--------------------------------------------------------------
 |
-| 7.7 PROJECTS
+| 7.7 CALENDAR
+|
+--------------------------------------------------------------*/
+
+.calendar {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: calc(100% - 17rem);
+}
+
+/*--------------------------------------------------------------
+|
+| 7.8 PROJECTS
 |
 --------------------------------------------------------------*/
 
