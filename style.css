@@ -320,12 +320,16 @@ div label[for=ui-component-toggle__yearly] {
 
 .ui-component-card {
   border-radius: var(--ui-radius-card);
-  background-color: var(--ui-color-background-secondary);
-  opacity: .80;
-  padding: 50px;
+  background-color: rgba(245,245,245,.8);
+  padding: 30px;
   color: black;
   overflow: hidden;
-  width: 100%
+  width: 100%;
+  text-align: left;
+}
+
+.ui-component-card :not(a) {
+  color: black;
 }
 
 .ui-component-card h3,p,a {
@@ -349,6 +353,13 @@ div label[for=ui-component-toggle__yearly] {
   background-size: 1.125rem;
   list-style: none;
   padding-left: 1.875rem;
+}
+
+.ui-component-list--item-bullet {
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 1.125rem;
+  margin-left: 1.5rem;
 }
 
 .ui-component-list--item-check {
@@ -602,6 +613,33 @@ div label[for=ui-component-toggle__yearly] {
 }
 
 .ui-section-testimonial--author { line-height: 1.25; }
+
+/*--------------------------------------------------------------
+|
+| 7.7 PROJECTS
+|
+--------------------------------------------------------------*/
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-list > * {
+  margin: .5rem 0;
+}
+
+.project {
+  width: 400px;
+}
+
+.tools {
+  display: inline-flex;
+}
+
+.tools > * {
+  margin: 0 .1rem;
+}
 
 /*--------------------------------------------------------------
 |
@@ -867,6 +905,14 @@ div label[for=ui-component-toggle__yearly] {
   .ui-layout-grid-3 { grid-template-columns: repeat(3, 1fr); }
 
   .ui-layout-grid-3 div:nth-of-type(3) { position: static; }
+
+  .project-list {
+    flex-direction: row;
+  }
+
+  .project-list > * {
+    margin: 0 .5rem;
+  }
 
   /*------------------------------------------------------------
   SECTION
