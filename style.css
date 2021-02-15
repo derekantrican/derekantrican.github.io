@@ -714,7 +714,7 @@ div label[for=ui-component-toggle__yearly] {
   .ui-layout-grid-2,
   .ui-layout-grid-3 {
     column-gap: var(--ui-layout-gutter);
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: .75fr 1fr;
     justify-items: center;
   }
 
@@ -945,6 +945,10 @@ div label[for=ui-component-toggle__yearly] {
   /*------------------------------------------------------------
   LAYOUT
   ------------------------------------------------------------*/
+
+  .profile-image {
+    height: 40rem;
+  }
 
   /*------------------------------------------------------------
   COMPONENT
