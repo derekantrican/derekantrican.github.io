@@ -617,46 +617,6 @@ div label[for=ui-component-toggle__yearly] {
 
 /*--------------------------------------------------------------
 |
-| 7.7 CALENDAR
-|
---------------------------------------------------------------*/
-
-.calendar {
-  margin-top: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  height: calc(100% - 17rem);
-}
-
-/*--------------------------------------------------------------
-|
-| 7.8 PROJECTS
-|
---------------------------------------------------------------*/
-
-.project-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.project-list > * {
-  margin: .5rem 0;
-}
-
-.project {
-  width: 400px;
-}
-
-.tools {
-  display: inline-flex;
-}
-
-.tools > * {
-  margin: 0 .1rem;
-}
-
-/*--------------------------------------------------------------
-|
 | 7.7 CLOSE
 |
 --------------------------------------------------------------*/
@@ -688,6 +648,73 @@ div label[for=ui-component-toggle__yearly] {
   margin-bottom: 0;
   margin-right: auto;
   color: white;
+}
+
+/*--------------------------------------------------------------
+|
+| 7.9 CALENDAR
+|
+--------------------------------------------------------------*/
+
+.calendar {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: calc(100% - 17rem);
+}
+
+/*--------------------------------------------------------------
+|
+| 7.10 PROJECTS
+|
+--------------------------------------------------------------*/
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-list > * {
+  margin: .5rem 0;
+}
+
+.project {
+  width: 400px;
+}
+
+.tools {
+  display: inline-flex;
+}
+
+.tools > * {
+  margin: 0 .1rem;
+}
+
+/*--------------------------------------------------------------
+|
+| 7.11 PRIVACY POLICY
+|
+--------------------------------------------------------------*/
+
+.privacy-policy {
+  border-radius: var(--ui-radius-card);
+  background-color: rgba(245,245,245,.8);
+  padding: 30px;
+}
+
+.privacy-policy :not(.privacy-policy-section):not(a):not(ul)  {
+  text-align: left; 
+  margin: 1rem 1rem;
+}
+
+.privacy-policy ul {
+  text-align: left; 
+  margin-left: 3rem;
+}
+
+.privacy-policy-section {
+  text-align: left; 
+  text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
