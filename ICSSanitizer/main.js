@@ -1,4 +1,4 @@
-const corsProxy = "https://cors-anywhere.herokuapp.com/";
+const corsProxy = "https://cors.bridged.cc/";
 
 $(function(){
     $('#btn').click(function(){
