@@ -184,7 +184,7 @@
     </body>
     <script>
         $.getJSON("https://www.reddit.com/r/EarthPorn/hot/.json", function(result) {
-            document.body.background = result.data.children.find(p => !p.data.is_self && p.data.thumbnail != 'default' && !p.data.stickied).data.url;
+            document.body.background = result.data.children.find(p => !p.data.is_self && p.data.thumbnail != 'default' && !p.data.stickied && p.data.preview.images[0].source.width > p.data.preview.images[0].source.height).data.url;
         });
     </script>
 </html>
