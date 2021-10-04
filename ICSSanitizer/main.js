@@ -4,7 +4,10 @@ $(function(){
     $('#btn').click(function(){
         var link = $('#link').val().replace("webcal://", "https://");
         $("#textArea").val("Working...");
-        $.get(corsProxy + link)
+        $.get({
+            url: corsProxy + link,
+            headers: { 'x-cors-grida-api-key' : 'FA3E3E7FC6559DC7E8DD35E1578C9' }
+        })
         .done(function (data) { processICS(data); })
         .fail(function (err) { alert(`Error accessing \"${link}\"\n\n${err.responseText}`); });
     });
