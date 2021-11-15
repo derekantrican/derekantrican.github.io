@@ -68,8 +68,8 @@ function modifyCalendar(component){
     }
 }
 
-function modifyEvent(vevent){
-    vevent = new ICAL.Event(vevent);
+function modifyEvent(event){
+    var vevent = new ICAL.Event(event);
 
     switch ($("input[name=eventTitle]:checked").val()){
         case "scramble":
@@ -106,4 +106,31 @@ function modifyEvent(vevent){
             vevent.uid = "";
             break;
     }
+
+    switch ($("input[name=eventOrganizer]:checked").val()){
+        case "scramble":
+            event.getFirstProperty("organizer").setParameter("cn", md5(event.getFirstProperty("organizer").getParameter("cn")));
+            event.updatePropertyWithValue("organizer", sanitizeMailTo(event.getFirstPropertyValue("organizer")));
+            break;
+        case "remove":
+            event.removeProperty("organizer");
+            break;
+    }
+
+    switch ($("input[name=eventAttendee]:checked").val()){
+        case "scramble":
+            for (var attendee of vevent.attendees){
+                attendee.setParameter("cn", md5(attendee.getParameter("cn")));
+                attendee.setValue(sanitizeMailTo(attendee.getValues()[0]));
+            }
+            break;
+        case "remove":
+            event.removeAllProperties("attendee");
+            break;
+    }
+}
+
+function sanitizeMailTo(val){
+    var email = val.replace("MAILTO:", "");
+    return `MAILTO:${md5(email)}`;
 }

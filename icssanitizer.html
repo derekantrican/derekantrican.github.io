@@ -15,10 +15,11 @@
   <body>
     <div class="wrapper">
       <div class="header">
-        ICAL Sanitizer
+        ICS/ICAL Sanitizer
       </div>
       <div class="urlRow">
-        <label>ICS url: </label><input type='text' id="link" placeholder="Type ICS URL here (ex. https://p24-calendars.icloud.com/holidays/us_en.ics)"><br>
+        <label>ICS/ICAL url: </label>
+        <input type='text' id="link" placeholder="Type ICS URL here (ex. https://p24-calendars.icloud.com/holidays/us_en.ics)"><br>
       </div>
       <div class="options">
         <fieldset>
@@ -65,6 +66,18 @@
               <td><input type="radio" name="eventUid" value="none" checked>None</td>
               <td><input type="radio" name="eventUid" value="scramble">Scramble</td>
               <td><input type="radio" name="eventUid" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Event organizer(s):</td>
+              <td><input type="radio" name="eventOrganizer" value="none" checked>None</td>
+              <td><input type="radio" name="eventOrganizer" value="scramble">Scramble</td>
+              <td><input type="radio" name="eventOrganizer" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Event attendee(s):</td>
+              <td><input type="radio" name="eventAttendee" value="none" checked>None</td>
+              <td><input type="radio" name="eventAttendee" value="scramble">Scramble</td>
+              <td><input type="radio" name="eventAttendee" value="remove">Remove</td>
             </tr>
           </table>
         </fieldset>
