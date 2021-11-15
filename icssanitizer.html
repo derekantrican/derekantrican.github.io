@@ -2,9 +2,9 @@
 <html style="height: 100%">
   <head>
     <style>
-    :root {
-      color-scheme: dark;
-    }
+      :root {
+        color-scheme: dark;
+      }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,14 +12,20 @@
     <meta name="description" content="ICAL Sanitizer">
     <meta name="keywords" content="ical,sanitizer,obfuscate">
     <!-- <link rel="stylesheet" href="stylesheet.css" type="text/css"> -->
+    <script src="ICSSanitizer\jquery.js"></script>
+    <script src="ICSSanitizer\ical.min.js"></script>
+    <script src="ICSSanitizer\main.js"></script>
+    <script src="ICSSanitizer\md5.min.js"></script>
   </head>
+
   <body style="height: 100%">
     <div id="header">
-        <h>ICAL Sanitizer</h>
-      </div>
+      <h>ICAL Sanitizer</h>
+    </div>
     <div id="container">
       <div class="center-align">
-        <label>ICS url: </label><input style="width: 90%;" type='text' id="link" placeholder="Type ICS URL here ex. https://p24-calendars.icloud.com/holidays/us_en.ics"><br>
+        <label>ICS url: </label><input style="width: 90%;" type='text' id="link"
+          placeholder="Type ICS URL here ex. https://p24-calendars.icloud.com/holidays/us_en.ics"><br>
         <div>
           <fieldset>
             <legend>Sanitize options</legend>
@@ -68,17 +74,12 @@
               </tr>
             </table>
           </fieldset>
-        </div>    
+        </div>
         <button id="btn">Update</button>
         Tip: Save to <a href="https://pastebin.com/" target="_blank">pastebin</a> for easier sharing
       </div>
     </div>
-    <textarea id="textArea" style="width: 100%; height: 100%;" readonly></textarea><!--Todo: fix height-->
-        <script src="ICSSanitizer\jquery.js"></script>
-        <script src="ICSSanitizer\ical.min.js"></script>
-        <script src="ICSSanitizer\main.js"></script>
-        <script src="ICSSanitizer\md5.min.js"></script>
-      </body>
-    </html>
+    <textarea id="textArea" style="width: 100%; height: 100%;" readonly></textarea>
+    <!--Todo: fix height-->
   </body>
 </html>
