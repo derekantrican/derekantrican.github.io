@@ -18,44 +18,37 @@
     <link rel="canonical" href="https://derekantrican.com/calendar.html">
     <link rel="icon" type="image/png" href="#" sizes="48x48">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-    <link rel="preload" as="style" href="style.css">
-    <link rel="stylesheet" href="style.css">
     <title>Derek Antrican - Calendar</title>
   </head>
-  <body background="https://i.imgur.com/r0ikb8J.jpg">
-    <header role="banner" class="ui-section-header">
-      <div class="ui-layout-container">
-        <div class="ui-section-header__layout ui-layout-flex">
-          <a href="index.html" role="link" aria-label="#" class="ui-section-header--logo">
-            <h2>Derek Antrican</h2>
-            <p class="ui-text-note" style="font-size: medium;">Software Developer | Mechanical Engineer | Outdoorsman</p>
-          </a>
-          <input type="checkbox" id="ui-section-header--menu-id">
-          <label for="ui-section-header--menu-id" class="ui-section-header--menu-icon"></label>
-          <nav role="navigation" class="ui-section-header--nav ui-layout-flex">
-            <a href="index.html" role="link" aria-label="#" class="ui-section-header--nav-link">Contact / About Me</a>
-            <a href="calendar.html" role="link" aria-label="#" class="ui-section-header--nav-link">Calendar</a>
-            <a href="projects.html" role="link" aria-label="#" class="ui-section-header--nav-link">Projects</a>
-            <a href="https://drive.google.com/file/d/1XOrFynDk4zRtOpoqtncoIUyqe6IcI_-m/view?usp=sharing" target="_blank" role="link" aria-label="#" class="ui-section-header--nav-link">Resume</a>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <main role="main" class="calendar">
-        <div style="display: flex; width: 50rem">
-            <strong>Key: </strong>
-            <img src="http://i.imgur.com/334XVTX.jpg"> = Personal Calendar;&nbsp;
-            <img src="http://i.imgur.com/rS6RBK3.jpg"> = Work Calendar;
-            <img src="https://i.imgur.com/ODS6Twe.jpg"> = Travel Calendar;
-            <img src="http://i.imgur.com/LDJEHNa.jpg"> = Daily Routine;
-        </div>
-        <iframe src="https://calendar.google.com/calendar/embed?title=Derek%20Antrican%27s%20Calendar&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=derekantrican%40gmail.com&amp;color=%232952A3&amp;src=c3ins1sptk096cturh9miq1fh8%40group.calendar.google.com&amp;color=%23853104&amp;src=usa__en%40holiday.calendar.google.com&amp;color=%23691426&amp;src=0rjqhei6kll2ctt0dnf2csvreo%40group.calendar.google.com&amp;color=%23B1365F&amp;src=9knhmt5mqsqhnrgcj6v5np1ea0%40group.calendar.google.com&amp;color=%23711616&amp;src=jioo99046g13ul1ko3b3japcqo%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>    </main>
-    <footer role="contentinfo" class="ui-section-footer">
-      <div class="ui-layout-container">
-        <div class="ui-section-footer__layout ui-layout-flex">
-          <p class="ui-section-footer--copyright"><small>&copy; 2021 Derek Antrican</small></p>
-        </div>
-      </div>
-    </footer>
+  <style>
+    @media all and (min-width: 768px) {
+      .header
+      {
+        display:flex;
+      }
+
+      .header > *
+      {
+        margin: 5px;
+      }
+    }
+    
+    @media all and (max-width: 767px) {
+      .header { display:none; }
+    }
+  </style>
+  <body style="height: 100%; width: 100%; margin: 0; background-color: white">
+	<div class="header" style="height: 30px">
+	  <strong>Key: </strong>
+	  <img src="http://i.imgur.com/334XVTX.jpg">
+    <span>= Personal Calendar;</span>
+	  <img src="http://i.imgur.com/rS6RBK3.jpg">
+    <span>= Work Calendar;</span>
+	  <img src="https://i.imgur.com/ODS6Twe.jpg">
+    <span>= Travel Calendar;</span>
+	  <img src="http://i.imgur.com/LDJEHNa.jpg">
+    <span>= Daily Routine;</span>
+	</div>
+	<iframe style="height: calc(100% - 34px); width: 100%; border-width: 0" src="https://calendar.google.com/calendar/embed?title=Derek%20Antrican%27s%20Calendar&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=derekantrican%40gmail.com&amp;color=%232952A3&amp;src=c3ins1sptk096cturh9miq1fh8%40group.calendar.google.com&amp;color=%23853104&amp;src=usa__en%40holiday.calendar.google.com&amp;color=%23691426&amp;src=0rjqhei6kll2ctt0dnf2csvreo%40group.calendar.google.com&amp;color=%23B1365F&amp;src=9knhmt5mqsqhnrgcj6v5np1ea0%40group.calendar.google.com&amp;color=%23711616&amp;src=jioo99046g13ul1ko3b3japcqo%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles" frameborder="0" scrolling="no"></iframe>
   </body>
 </html>
