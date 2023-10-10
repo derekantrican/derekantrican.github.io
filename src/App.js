@@ -1,11 +1,14 @@
 import './App.css';
+import { isMobile } from 'react-device-detect';
 
 //I can also use this site for "hidden" pages (like Turkish Resources, etc)
 
 function App() {
   return (
     <div style={{display: 'flex', flexDirection: 'row', height: '100%'}}>
-      <div style={{width: 400, borderWidth: '0px 2px 0px 0px', borderStyle: 'solid'}}>
+      {isMobile ? 
+       <i style={{fontSize: '50px' /*Might need position: absolute */}} className='bi bi-list'/> :  
+       <div style={{width: 400, borderWidth: '0px 2px 0px 0px', borderStyle: 'solid'}}>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           <img style={{borderRadius: '50%', width: 'calc(100% - 100px)', margin: '50px 50px 0px 50px'}} src="https://avatars.githubusercontent.com/u/1558019"/>
           <div style={{width: 'calc(100% - 20px)', padding: 10, margin: '20px 0px', textAlign: 'center'}}>
@@ -17,7 +20,7 @@ function App() {
           <NavBarLink name="Blog(s)"/>{/*Should be an "aggregate feed" of my various blogs (with filters for PCT, etc and the special tags I used on the PCT blog) */}
           {/*Todo: need some links like GitHub, LinkedIn, etc */}
         </div>
-      </div>
+      </div>}
       <div>
 
       </div>
