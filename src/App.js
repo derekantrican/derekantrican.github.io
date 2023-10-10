@@ -27,7 +27,8 @@ function App() {
 
 function NavBarLink(props) {
   return (
-    <div style={{display: 'flex', borderWidth: `${props.top ? '2px' : '0px'} 0px 2px 0px`, borderStyle: 'solid', width: 'calc(100% - 20px)', padding: 10}}>
+    <div style={{display: 'flex', borderWidth: `${props.top ? '2px' : '0px'} 0px 2px 0px`, borderStyle: 'solid', width: 'calc(100% - 20px)', padding: 10,
+      cursor: 'pointer'}} className="navlink">
       <div style={{fontSize: '20px'}}>{props.name}</div>
       <div style={{flex: '1 0 0'}} />
       <i style={{height: 20, width: 20, fontSize: '25px'}} className='bi bi-chevron-right'/>
