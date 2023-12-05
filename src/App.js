@@ -31,8 +31,10 @@ function App() {
             <NavBarLink name="Blog(s)" onClick={() => setNavState('blogs')}>
               {/*Should be an "aggregate feed" of my various blogs (with filters for PCT, etc and the special tags I used on the PCT blog) */}
             </NavBarLink>
-            <div style={{display: 'flex', flexDirection: 'row', marginTop: 'auto'}}>
-              {/*Todo: need some links like GitHub, LinkedIn, etc */}
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: 'auto'}}>
+              <Social icon='github' link='https://github.com/derekantrican'/>
+              <Social icon='linkedin' link='https://www.linkedin.com/in/derekantrican/'/>
+              <Social icon='envelope' link='mailto:derekantrican@gmail.com'/>
             </div>
           </div>
         </div>
@@ -58,6 +60,14 @@ function NavBarLink(props) {
         props.children 
       : null}
     </div>
+  );
+}
+
+function Social(props) {
+  return (
+    <a style={{color: 'white', margin: 20}} href={props.link} target='_blank'>
+      <i style={{height: 50, width: 50, fontSize: '50px'}} className={`bi bi-${props.icon}`}/>
+    </a>
   );
 }
 
