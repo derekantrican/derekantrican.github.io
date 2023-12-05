@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import './App.css';
 import { isMobile } from 'react-device-detect';
 
 //I can also use this site for "hidden" pages (like Turkish Resources, etc)
 
 function App() {
+  const [navState, setNavState] = useState('home');
+
   return (
     <div style={{display: 'flex', flexDirection: 'row', height: '100%'}}>
       {isMobile ? 
@@ -14,11 +17,22 @@ function App() {
           <div style={{width: 'calc(100% - 20px)', padding: 10, margin: '20px 0px', textAlign: 'center'}}>
             Software Engineer | Mechanical Engineer | Outdoorsman
           </div>
-          <NavBarLink name="About Me" top="true"/>{/*Subpages: Hobbies, Turkiye, etc?*/}
-          <NavBarLink name="Calendar"/>
-          <NavBarLink name="Projects"/>{/*Subpages: should auto populate from a json file somewhat like my current projects page https://derekantrican.com/projects.html */}
-          <NavBarLink name="Blog(s)"/>{/*Should be an "aggregate feed" of my various blogs (with filters for PCT, etc and the special tags I used on the PCT blog) */}
-          {/*Todo: need some links like GitHub, LinkedIn, etc */}
+          {/* <i style={{height: 20, width: 20, fontSize: '25px', alignSelf: 'start', visibility: 'hidden'}} className={`bi bi-chevron-left`} onClick={() => setNavState('home')}/> */}
+          <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
+            <NavBarLink name="About Me" top="true" onClick={() => setNavState('about')} selected={navState == 'about'}>
+              {/*Subpages: Hobbies, Turkiye, etc?*/}
+              <SubNavLink name="Hobbies"/>
+              <SubNavLink name="Turkiye"/>
+            </NavBarLink>
+            <NavBarLink name="Calendar"/>
+            <NavBarLink name="Projects" onClick={() => setNavState('projects')}>
+              {/*Subpages: should auto populate from a json file somewhat like my current projects page https://derekantrican.com/projects.html */}
+            </NavBarLink>
+            <NavBarLink name="Blog(s)" onClick={() => setNavState('blogs')}>
+              {/*Should be an "aggregate feed" of my various blogs (with filters for PCT, etc and the special tags I used on the PCT blog) */}
+            </NavBarLink>
+            {/*Todo: need some links like GitHub, LinkedIn, etc */}
+          </div>
         </div>
       </div>}
       <div>
@@ -28,13 +42,28 @@ function App() {
   );
 }
 
+//Todo: it'd be nice to have the current page's nav link also "highlighted" (a blue background or whatever)
 function NavBarLink(props) {
   return (
-    <div style={{display: 'flex', borderWidth: `${props.top ? '2px' : '0px'} 0px 2px 0px`, borderStyle: 'solid', width: 'calc(100% - 20px)', padding: 10,
-      cursor: 'pointer'}} className="navlink">
-      <div style={{fontSize: '20px'}}>{props.name}</div>
-      <div style={{flex: '1 0 0'}} />
-      <i style={{height: 20, width: 20, fontSize: '25px'}} className='bi bi-chevron-right'/>
+    <div style={{display: 'flex', flexDirection: 'column'}}>
+      <div style={{display: 'flex', borderWidth: `${props.top ? '2px' : '0px'} 0px 2px 0px`, borderStyle: 'solid', width: 'calc(100% - 20px)', padding: '10px 10px 12px 10px',
+        cursor: 'pointer'}} className="navlink" onClick={props.onClick}>
+        <div style={{fontSize: '20px'}}>{props.name}</div>
+        <div style={{flex: '1 0 0'}} />
+        <i style={{height: 20, width: 20, fontSize: '25px'}} className={`bi bi-chevron-${props.selected ? 'down' : 'right'}`}/>
+      </div>
+      {props.selected ? 
+        props.children 
+      : null}
+    </div>
+  );
+}
+
+function SubNavLink(props) {
+  return (
+    <div style={{display: 'flex', borderWidth: `${props.top ? '2px' : '0px'} 0px 2px 0px`, borderStyle: 'solid', width: 'calc(100% - 20px)', padding: '10px 10px 12px 10px',
+      cursor: 'pointer'}} className="navlink" onClick={props.onClick}>
+      <div style={{fontSize: '20px', marginLeft: '20px'}}>{props.name}</div>
     </div>
   );
 }
