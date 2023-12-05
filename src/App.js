@@ -12,17 +12,17 @@ function App() {
       {isMobile ? 
        <i style={{fontSize: '50px' /*Might need position: absolute */}} className='bi bi-list'/> :  
        <div style={{width: 400, borderWidth: '0px 2px 0px 0px', borderStyle: 'solid'}}>
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%'}}>
           <img style={{borderRadius: '50%', width: 'calc(100% - 100px)', margin: '50px 50px 0px 50px'}} src="https://avatars.githubusercontent.com/u/1558019"/>
           <div style={{width: 'calc(100% - 20px)', padding: 10, margin: '20px 0px', textAlign: 'center'}}>
             Software Engineer | Mechanical Engineer | Outdoorsman
           </div>
           {/* <i style={{height: 20, width: 20, fontSize: '25px', alignSelf: 'start', visibility: 'hidden'}} className={`bi bi-chevron-left`} onClick={() => setNavState('home')}/> */}
-          <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
+          <div style={{display: 'flex', flexDirection: 'column', width: '100%', height: '100%'}}>
             <NavBarLink name="About Me" top="true" onClick={() => setNavState('about')} selected={navState == 'about'}>
               {/*Subpages: Hobbies, Turkiye, etc?*/}
-              <SubNavLink name="Hobbies"/>
-              <SubNavLink name="Turkiye"/>
+              <NavBarLink name="Hobbies" level="1"/>
+              <NavBarLink name="Turkiye" level="1"/>
             </NavBarLink>
             <NavBarLink name="Calendar"/>
             <NavBarLink name="Projects" onClick={() => setNavState('projects')}>
@@ -31,7 +31,9 @@ function App() {
             <NavBarLink name="Blog(s)" onClick={() => setNavState('blogs')}>
               {/*Should be an "aggregate feed" of my various blogs (with filters for PCT, etc and the special tags I used on the PCT blog) */}
             </NavBarLink>
-            {/*Todo: need some links like GitHub, LinkedIn, etc */}
+            <div style={{display: 'flex', flexDirection: 'row', marginTop: 'auto'}}>
+              {/*Todo: need some links like GitHub, LinkedIn, etc */}
+            </div>
           </div>
         </div>
       </div>}
@@ -48,22 +50,13 @@ function NavBarLink(props) {
     <div style={{display: 'flex', flexDirection: 'column'}}>
       <div style={{display: 'flex', borderWidth: `${props.top ? '2px' : '0px'} 0px 2px 0px`, borderStyle: 'solid', width: 'calc(100% - 20px)', padding: '10px 10px 12px 10px',
         cursor: 'pointer'}} className="navlink" onClick={props.onClick}>
-        <div style={{fontSize: '20px'}}>{props.name}</div>
+        <div style={{fontSize: '20px', marginLeft: (props.level ?? 0) * 20}}>{props.name}</div>
         <div style={{flex: '1 0 0'}} />
-        <i style={{height: 20, width: 20, fontSize: '25px'}} className={`bi bi-chevron-${props.selected ? 'down' : 'right'}`}/>
+        {props.children ? <i style={{height: 20, width: 20, fontSize: '25px'}} className={`bi bi-chevron-${props.selected ? 'down' : 'right'}`}/> : null}
       </div>
       {props.selected ? 
         props.children 
       : null}
-    </div>
-  );
-}
-
-function SubNavLink(props) {
-  return (
-    <div style={{display: 'flex', borderWidth: `${props.top ? '2px' : '0px'} 0px 2px 0px`, borderStyle: 'solid', width: 'calc(100% - 20px)', padding: '10px 10px 12px 10px',
-      cursor: 'pointer'}} className="navlink" onClick={props.onClick}>
-      <div style={{fontSize: '20px', marginLeft: '20px'}}>{props.name}</div>
     </div>
   );
 }
