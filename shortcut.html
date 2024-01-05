@@ -183,7 +183,7 @@
                   {!todoistApiKey ? <TodoistTask content='NO TODOIST API KEY (set in local storage via devtools)'/> : null}
                   {tasks ?
                     <div style={{overflowWrap: 'anywhere', overflowY: 'auto', height: '100%'}}>
-                      {tasks.map(t => <TodoistTask content={t.content} onChecked={() => console.log(t.content, 'checked!') /*Todo: complete & remove item on check*/}/>)}
+                      {tasks.map(t => <TodoistTask key={t.id} content={t.content} onChecked={() => console.log(t.content, 'checked!') /*Todo: complete & remove item on check*/}/>)}
                     </div>
                   : null}
                 </div>
