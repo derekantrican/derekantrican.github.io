@@ -114,11 +114,13 @@
       function TodoistTask(props) {
         return (
           <div style={{display: 'flex', flexDirection: 'row', backgroundColor: '#e44232', padding: 10, borderRadius: 10, margin: 5}}>
-            <label class="container">
-              <div className='markdownContent' dangerouslySetInnerHTML={{__html: convertMarkdown(props.content)}}/>
-              {props.onChecked ? <input style={{marginRight: 5}} type='checkbox' onChange={props.onChecked}/> : null}
-              <span class="checkmark"></span>
-            </label>
+            {props.onChecked ?
+              <label class="container">
+                <div className='markdownContent' dangerouslySetInnerHTML={{__html: convertMarkdown(props.content)}}/>
+                <input style={{marginRight: 5}} type='checkbox' onChange={props.onChecked}/>
+                <span class="checkmark"></span>
+              </label>
+            : props.content}
           </div>
         );
       }
@@ -128,7 +130,7 @@
         const [background, setBackground] = useState(null);
         const [tasks, setTasks] = useState(null);
 
-        const todoistApiKey = localStorage.getItem('todoistApiKey');
+        const todoistApiKey = null//localStorage.getItem('todoistApiKey');
 
         useEffect(() => {
           async function populateShortcuts() {
