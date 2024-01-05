@@ -5,9 +5,84 @@
     <script crossorigin src='https://unpkg.com/react@16/umd/react.development.js'></script>
     <script crossorigin src='https://unpkg.com/react-dom@16/umd/react-dom.development.js'></script>
     <script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <style>
     :root{
       color-scheme: dark;
+    }
+
+    /*https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default checkbox */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto 0;
+      height: 17px;
+      width: 17px;
+      border: 2px solid white;
+      border-radius: 5px;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+      background-color: #2196F3;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+      left: 6px;
+      top: 2px;
+      width: 3px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    /*Clear margin from showdown.js*/
+    .markdownContent > p {
+      margin: 0;
     }
     </style>
   </head>
@@ -20,9 +95,40 @@
         useEffect,
       } = React;
 
+      const convertMarkdown = (text) => {
+        if (text) {
+          return new showdown.Converter().makeHtml(text);
+        }
+
+        return null;
+      }
+
+      function Shortcut(props) {
+        return (
+          <a style={{margin: 'auto'}} href={props.url}>
+              <img style={{height: 200, width: 200, objectFit: 'contain'}} src={props.icon}/>
+          </a>
+        );
+      }
+
+      function TodoistTask(props) {
+        return (
+          <div style={{display: 'flex', flexDirection: 'row', backgroundColor: '#e44232', padding: 10, borderRadius: 10, margin: 5}}>
+            <label class="container">
+              <div className='markdownContent' dangerouslySetInnerHTML={{__html: convertMarkdown(props.content)}}/>
+              {props.onChecked ? <input style={{marginRight: 5}} type='checkbox' onChange={props.onChecked}/> : null}
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        );
+      }
+
       function App() {
         const [shortcuts, setShortcuts] = useState(null);
         const [background, setBackground] = useState(null);
+        const [tasks, setTasks] = useState(null);
+
+        const todoistApiKey = localStorage.getItem('todoistApiKey');
 
         useEffect(() => {
           async function populateShortcuts() {
@@ -41,24 +147,43 @@
             ).data.url);
           };
 
+          async function getTodoistTasks() {
+            const response = await fetch('https://api.todoist.com/rest/v2/tasks?filter=@SELECTED_TODAY%26today' /*this is not the 'exact' SELECTED_TODAY filter, but close*/, {
+              headers: {
+                'Authorization' : `Bearer ${todoistApiKey}`,
+              },
+            });
+            const data = await response.json();
+            console.log(data)
+            setTasks(data);
+          }
+
           populateShortcuts();
           setBackgroundImage();
+          getTodoistTasks();
         }, []);     
 
         const columns = Array.from(Array(8).keys());
         const rows = Array.from(Array(4).keys());
 
         return (
-            <div style={{display: 'flex', flexDirection: 'row', height: '100%', padding: 8,
+            <div style={{display: 'flex', flexDirection: 'row', height: 'calc(100% - 16px)', padding: 8,
                          backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
                 <div style={{display: 'grid', gridTemplateColumns: 'repeat(8, 200px)', gridGap: 5, height: '100%'}}>
                     {shortcuts ? shortcuts.map(shortcut =>
-                        shortcut ?
-                            <a style={{margin: 'auto'}} href={shortcut.url}>
-                                <img style={{height: 200, width: 200, objectFit: 'contain'}} src={shortcut.icon}/>
-                            </a>
+                        shortcut 
+                        ? <Shortcut url={shortcut.url} icon={shortcut.icon}/>
                         : <div style={{height: 200, width: 200}}/> //Fill empty spaces
                     ) : null}
+                </div>
+                <div style={{flex: '1 0 0'}}/>
+                <div style={{width: 300}}>
+                  {!todoistApiKey ? <TodoistTask content='NO TODOIST API KEY (set in local storage via devtools)'/> : null}
+                  {tasks ?
+                    <div style={{overflowWrap: 'anywhere', overflowY: 'auto', height: '100%'}}>
+                      {tasks.map(t => <TodoistTask content={t.content} onChecked={() => console.log(t.content, 'checked!') /*Todo: complete & remove item on check*/}/>)}
+                    </div>
+                  : null}
                 </div>
             </div>
         );
