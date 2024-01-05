@@ -130,7 +130,7 @@
         const [background, setBackground] = useState(null);
         const [tasks, setTasks] = useState(null);
 
-        const todoistApiKey = null//localStorage.getItem('todoistApiKey');
+        const todoistApiKey = localStorage.getItem('todoistApiKey');
 
         useEffect(() => {
           async function populateShortcuts() {
