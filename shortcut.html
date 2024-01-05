@@ -1,217 +1,73 @@
-<html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    </head>
-    <body style="background-color:black; background-size: cover;">
-        <!-- TODO: icons should resize depending on size of window -->
-        <!--Ideas for new icons:
-            OLoop http://oloop/
-            CloudBuild https://b/
-        -->
-        <table height="100%" border="0">
-            <tr align="center">
-                <!--GMAIL-->
-                <td>
-                    <a href="http://gmail.com" accesskey="g">
-                        <img src="http://www.imgur.com/dgiBR.png" alt="Gmail" height="140" width="200" border="0">
-                    </a>
-                </td>
-                <!--GOOGLE CALENDAR-->
-                <td>
-                    <a href="http://calendar.google.com" accesskey="c">
-                        <img src="http://www.imgur.com/jx7t4.png" height="150" width="200" border="0">
-                    </a>
-                </td>
-                <!--GOOGLE DRIVE-->
-                <td>
-                    <a href="http://drive.google.com">
-                        <img src="http://i.imgur.com/ozdkIZK.png" height="159" width="200" border="0">
-                    </a>
-                </td>
-                <!--TRELLO-->
-                <td>
-                    <a href="https://trello.com/">
-                        <img src="http://i.imgur.com/iBhatZv.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--SIMPLENOTE-->
-                <td>
-                    <a href="https://app.simplenote.com/">
-                        <img src="http://i.imgur.com/T8zQc3Q.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--DISCORD-->
-                <td>
-                    <a href="https://discord.com/app" accesskey="p">
-                        <img src="https://cdn.iconscout.com/icon/free/png-512/discord-3-569463.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--OCB branches-->
-                <td>
-                    <a href="https://dev.azure.com/office/Office/_git/Office?path=%2Fcloudbuildtools%2FSynthetics%2FDashboard.md&version=GBofficial%2Fengtools&_a=preview" accesskey="p">
-                        <img src="https://i.imgur.com/YHoEXzZ.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--EMPTY-->
-                <td height="150" width="150"></td>
-                <td>
-                    <!--CHROME WEBSTORE-->
-                    <a href="http://chrome.google.com/webstore">
-                        <img src="http://i.imgur.com/AftU1Mm.png" height="54" width="50" border="0">
-                    </a>
-                    <!--GOOGLE CONTACTS-->
-                    <a href="http://contacts.google.com">
-                        <img src="http://i.imgur.com/G2XgVsM.png" height="50" width="50" border="0">
-                    </a>
-                </td>
-            </tr>
-            <tr align="center">
-                <!--YOUTUBE-->
-                <td>
-                    <a href="http://www.youtube.com/feed/subscriptions">
-                        <img src="http://i.imgur.com/1xHt3u7.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--POCKET-->
-                <td>
-                    <a href="http://getpocket.com/login">
-                        <img src="http://i.imgur.com/vjBAY0Y.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--HULU-->
-                <td>
-                    <a href="http://hulu.com">
-                        <img src="http://i.imgur.com/xMgzcK2.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--SPOTIFY-->
-                <td>
-                    <a href="https://open.spotify.com" accesskey="p">
-                        <img src="https://www.benlcollins.com/wp-content/uploads/2016/01/spotify.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--PLEX-->
-                <td>
-                    <a href="https://plex.tv/web" accesskey="p">
-                        <img src="https://beyondtv.com/wp-content/uploads/2020/04/910-9103810_plex-media-server-transparent-plex-icon.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--GITHUB-->
-                <td>
-                    <a href="https://github.com/derekantrican">
-                        <img src="https://i.imgur.com/1vqxqJH.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--OCB Workitems-->
-                <td>
-                    <a href="https://office.visualstudio.com/OE/_queries/query/ab4c4fe2-d35f-41a4-b26d-aae528b7ca50" accesskey="p">
-                        <img src="https://i.imgur.com/XQvXQ0v.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--Azure-->
-                <td>
-                    <a href="https://ms.portal.azure.com" accesskey="p">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-            </tr>
-            <tr align="center">
-                <!--TEAMVIEWER-->
-                <td>
-                    <a href="http://login.teamviewer.com">
-                        <img src="http://i.imgur.com/Rkje5gQ.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--SONARR-->
-                <td>
-                    <a href="http://server.derekantrican.com/sonarr">
-                        <img src="https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--RADARR-->
-                <td>
-                    <a href="http://server.derekantrican.com/radarr">
-                        <img src="https://styles.redditmedia.com/t5_3icg7/styles/communityIcon_d0kaqkdtx9261.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--READARR-->
-                <td>
-                    <a href="http://server.derekantrican.com/readarr">
-                        <img src="https://images.opencollective.com/readarr/2f7d366/logo/256.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--MOTIONEYE-->
-                <td>
-                    <a href="http://server.derekantrican.com/cam">
-                        <img src="https://dashboard.snapcraft.io/site_media/appmedia/2022/02/icon_gByPU8F.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--OCTOPRINT-->
-                <td>
-                    <a href="http://server.derekantrican.com/octoprint">
-                        <img src="https://octoprint.org/assets/img/logo.png" height="161" width="200" border="0">
-                    </a>
-                </td>
-                <!--Triage query-->
-                <td>
-                    <a href="https://office.visualstudio.com/OE/_queries/query/70358cec-cd29-4f32-85b2-ad5be04f0e01" accesskey="p">
-                        <img src="https://i.imgur.com/52ka15m.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--Azure PIM (Privileged Identity Management)-->
-                <td>
-                    <a href="https://ms.portal.azure.com/?Microsoft_Azure_PIMCommon=true#blade/Microsoft_Azure_PIMCommon/CommonMenuBlade/quickStart/defaultMenuId/myroles/provider/azurerbac" accesskey="p">
-                        <img src="https://i.imgur.com/NyHfiKs.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-            </tr>
-            <tr align="center">
-                <!--BECU-->
-                <td>
-                    <a href="https://onlinebanking.becu.org/BECUBankingWeb/login.aspx">
-                        <img src="https://onlinebanking.becu.org/BECUBankingWeb/images/becu-logo-desktop.png" height="72" width="200" border="0">
-                    </a>
-                </td>
-                <!--AMAZON PRIME CARD-->
-                <td>
-                    <a href="https://www.chase.com/personal/credit-cards/amazon/view-account">
-                        <img src="https://i.imgur.com/AiUsmAS.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--EMPTY-->
-                <td></td>
-                <!--YEAR AT A GLANCE-->
-                <td>
-                    <a href="https://docs.google.com/spreadsheets/d/1rlZhUzeei_hqxPG-JXDJ6vg1A-bFVl9K7Z0xTWxY42w/edit#gid=2087645350">
-                        <img src="https://i.imgur.com/3cNwvEm.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--YEAR AT A GLANCE (VIEW)-->
-                <td>
-                    <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZHen0asRbQyQiEUE9EhfgPLQN0P-ecLOiTH7sBlcKtJ-BWWnrsk4Fkhpi8OKmvkfA2ZRn1v8FrI8C/pubhtml?gid=2087645350&single=true&chrome=false&widget=false&headers=false">
-                        <img src="https://i.imgur.com/EHtREvx.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--WEATHER UNDERGROUND-->
-                <td>
-                    <a href="https://www.wunderground.com/weather/us/wa/kirkland">
-                        <img src="http://i.imgur.com/OyHx49J.jpg" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--DRI Dashboard-->
-                <td>
-                    <a href="https://office.visualstudio.com/OE/_dashboards/dashboard/1ae8cbf2-b32e-42bb-b780-5861d8aa4c76" accesskey="p">
-                        <img src="https://i.imgur.com/yElntqn.png" height="200" width="200" border="0">
-                    </a>
-                </td>
-                <!--EMPTY-->
-                <td height="150" width="150"></td>
-            </tr>
-        </table>
-    </body>
-    <script>
-        $.getJSON("https://www.reddit.com/r/EarthPorn/hot/.json", function(result) {
-            document.body.background = result.data.children.find(p => !p.data.is_self && p.data.thumbnail != 'default' && !p.data.stickied && p.data.preview.images[0].source.width > p.data.preview.images[0].source.height).data.url;
-        });
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script crossorigin src='https://unpkg.com/react@16/umd/react.development.js'></script>
+    <script crossorigin src='https://unpkg.com/react-dom@16/umd/react-dom.development.js'></script>
+    <script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+    <style>
+    :root{
+      color-scheme: dark;
+    }
+    </style>
+  </head>
+  <body style="margin: 0">
+    <div id='root'></div>
+
+    <script type='text/babel'>
+      const {
+        useState,
+        useEffect,
+      } = React;
+
+      function App() {
+        const [shortcuts, setShortcuts] = useState(null);
+        const [background, setBackground] = useState(null);
+
+        useEffect(() => {
+          async function populateShortcuts() {
+            const response = await fetch('https://derekantrican.com/shortcuts.json');
+            setShortcuts(await response.json());
+          };
+
+          async function setBackgroundImage() {
+            const response = await fetch('https://www.reddit.com/r/EarthPorn/hot/.json?limit=5');
+            const data = await response.json();
+            setBackground(data.data.children.find(p => 
+                !p.data.is_self && 
+                p.data.thumbnail != 'default' && 
+                !p.data.stickied && 
+                p.data.preview.images[0].source.width > p.data.preview.images[0].source.height
+            ).data.url);
+          };
+
+          populateShortcuts();
+          setBackgroundImage();
+        }, []);     
+
+        const columns = Array.from(Array(8).keys());
+        const rows = Array.from(Array(4).keys());
+
+        return (
+            <div style={{display: 'flex', flexDirection: 'row', height: '100%', padding: 8,
+                         backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
+                <div style={{display: 'grid', gridTemplateColumns: 'repeat(8, 200px)', gridGap: 5, height: '100%'}}>
+                    {shortcuts ? shortcuts.map(shortcut =>
+                        shortcut ?
+                            <a style={{margin: 'auto'}} href={shortcut.url}>
+                                <img style={{height: 200, width: 200, objectFit: 'contain'}} src={shortcut.icon}/>
+                            </a>
+                        : <div style={{height: 200, width: 200}}/> //Fill empty spaces
+                    ) : null}
+                </div>
+            </div>
+        );
+      };
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+      );
     </script>
+  </body>
 </html>
