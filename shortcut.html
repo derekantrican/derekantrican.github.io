@@ -121,10 +121,10 @@
         return (
           <div style={{display: 'flex', flexDirection: 'row', backgroundColor: '#e44232', padding: 10, borderRadius: 10, margin: 5}}>
             {props.onChecked ?
-              <label class="container">
+              <label className="container">
                 <div className='markdownContent' dangerouslySetInnerHTML={{__html: convertMarkdown(props.content)}}/>
                 <input style={{marginRight: 5}} type='checkbox' onChange={props.onChecked}/>
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
               </label>
             : props.content}
           </div>
@@ -171,6 +171,14 @@
           getTodoistTasks();
         }, []);     
 
+        const completeTodoistTask = async (id) => {
+          const response = await fetch(`https://api.todoist.com/rest/v2/tasks/${id}/close`, {
+              method: 'post',
+              headers: {
+                'Authorization' : `Bearer ${todoistApiKey}`,
+              },
+          });
+        }
         const columns = Array.from(Array(8).keys());
         const rows = Array.from(Array(4).keys());
 
@@ -189,7 +197,12 @@
                   {!todoistApiKey ? <TodoistTask content='NO TODOIST API KEY (set in local storage via devtools)'/> : null}
                   {tasks ?
                     <div style={{overflowWrap: 'anywhere', overflowY: 'auto', height: '100%'}}>
-                      {tasks.map(t => <TodoistTask key={t.id} content={t.content} onChecked={() => console.log(t.content, 'checked!') /*Todo: complete & remove item on check*/}/>)}
+                      {tasks.map(t => 
+                        <TodoistTask key={t.id} content={t.content} onChecked={() => {
+                          completeTodoistTask(t.id);
+                          setTasks(tasks.filter(task => task.id != t.id))
+                        }}/>
+                      )}
                     </div>
                   : null}
                 </div>
