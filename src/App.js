@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop';
 import { About } from './pages/About';
 import { Home } from './pages/Home';
 import { Calendar } from './pages/Calendar';
+import { ProfessionalLife } from './pages/ProfessionalLife';
 
 //I can also use this site for "hidden" pages (like Turkish Resources, etc)
 
@@ -21,6 +22,11 @@ function App() {
         <Route path='/about' element={
           <Layout title='About'>
             <About/>
+          </Layout>
+        }/>
+        <Route path='/about/professionallife' element={
+          <Layout title='Professional life'>
+            <ProfessionalLife/>
           </Layout>
         }/>
         <Route path='/calendar' element={
