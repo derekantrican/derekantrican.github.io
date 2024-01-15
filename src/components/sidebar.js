@@ -14,7 +14,6 @@ export function Sidebar(props) {
               Software Engineer | Mechanical Engineer | Outdoorsman
           </div>
         </Link>
-        {/* <i style={{height: 20, width: 20, fontSize: '25px', alignSelf: 'start', visibility: 'hidden'}} className={`bi bi-chevron-left`} onClick={() => setNavState('home')}/> */}
         <div style={{display: 'flex', flexDirection: 'column', width: '100%', height: '100%'}}>
           <NavBarLink name="About Me" top="true" path='/about' selected={window.location.pathname == '/about'}>
             {/*Subpages: Hobbies, Turkiye, etc?*/}
