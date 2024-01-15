@@ -14,17 +14,17 @@ function App() {
       <ScrollToTop/>
       <Routes>
         <Route path='/' element={
-          <Layout>
+          <Layout title='Home'>
             <Home/>
           </Layout>
         }/>
         <Route path='/about' element={
-          <Layout>
+          <Layout title='About'>
             <About/>
           </Layout>
         }/>
         <Route path='/calendar' element={
-          <Layout>
+          <Layout title='Calendar'>
             <Calendar/>
           </Layout>
         }/>

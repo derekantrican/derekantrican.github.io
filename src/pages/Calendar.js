@@ -61,7 +61,6 @@ export function Calendar() {
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', height: '100%', width: 'calc(100% - 20px)', margin: '0px 10px'}}>
-      {/*Todo: allow sidebar to still be shown without obscuring the content (perhaps this will be fine once sidebar is turned into a show/hide behavior) */}
       <div style={{display: 'flex', flexWrap: 'wrap', alignItems: 'center'}}>
         <strong>Key: </strong>
         {/*Todo: rather than using imgur links, I could use the calendar map above and make the squares directly*/}

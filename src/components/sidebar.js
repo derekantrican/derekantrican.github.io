@@ -1,9 +1,13 @@
+import '../styles/sidebar.css';
 import { Link } from "react-router-dom";
+import { useIsMobile } from '../hooks/isMobile';
 
-export function Sidebar() {
+export function Sidebar(props) {
+  const isMobile = useIsMobile();
+
   return (
-    <div style={{width: 400, borderWidth: '0px 2px 0px 0px', borderStyle: 'solid'}}>
-      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%'}}>
+    <div className={isMobile ? props.isOpen ? "sidebar open" : "sidebar" : ""} style={isMobile ? {width: '100%'} : {width: 400, borderWidth: '0px 2px 0px 0px', borderStyle: 'solid'}}>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: isMobile ? 'calc(100% - 50px)' : '100%'}}>
         <Link style={{textDecoration: 'none', color: 'white'}} to='/'>
           <img style={{borderRadius: '50%', width: 'calc(100% - 100px)', margin: '50px 50px 0px 50px'}} src="https://avatars.githubusercontent.com/u/1558019"/>
           <div style={{width: 'calc(100% - 20px)', padding: 10, margin: '20px 0px', textAlign: 'center'}}>
