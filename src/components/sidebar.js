@@ -14,10 +14,11 @@ export function Sidebar() {
         <div style={{display: 'flex', flexDirection: 'column', width: '100%', height: '100%'}}>
           <NavBarLink name="About Me" top="true" path='/about' selected={window.location.pathname == '/about'}>
             {/*Subpages: Hobbies, Turkiye, etc?*/}
+            <NavBarLink name="Professional life" level="1"/>{/*Todo: this can also have my 'resume' link at the bottom*/}
             <NavBarLink name="Hobbies" level="1"/>
             <NavBarLink name="Turkiye" level="1"/>
           </NavBarLink>
-          <NavBarLink name="Calendar"/>
+          <NavBarLink name="Calendar" path='/calendar'/>
           <NavBarLink name="Projects" path='/projects'>
             {/*Subpages: should auto populate from a json file somewhat like my current projects page https://derekantrican.com/projects.html */}
           </NavBarLink>
