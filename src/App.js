@@ -24,7 +24,9 @@ function App() {
           </Layout>
         }/>
         <Route path='/calendar' element={
-          <Calendar/>
+          <Layout>
+            <Calendar/>
+          </Layout>
         }/>
       </Routes>
     </BrowserRouter>
