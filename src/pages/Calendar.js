@@ -1,6 +1,6 @@
 export function Calendar() {
 
-  //This function is a complicated function for building up the embedded calendar url,
+  //This function is a complicated function just for building up the embedded calendar url,
   //but makes it easier to tweak the embedded calendars if I need to
   const calendarSrc = () => {
     const baseUrl = 'https://calendar.google.com/calendar/embed?';
