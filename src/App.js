@@ -28,6 +28,12 @@ function App() {
             <Calendar/>
           </Layout>
         }/>
+        {/*Todo: have unlisted pages like turkish resources, halal tips, etc*/}
+        <Route path='/dev' element={
+          <></>
+          //Todo: have a login page (with TOTP) that will open up some admin options on the website
+        }/>
+        {/*Todo: could have a whole "Turkiye worker" section for newsletters, etc that is login-protected*/}
       </Routes>
     </BrowserRouter>
   );
