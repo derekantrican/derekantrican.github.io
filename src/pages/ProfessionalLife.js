@@ -1,3 +1,4 @@
+import '../styles/professionalLife.css';
 import { MarkdownPage } from "../components/MarkdownPage";
 import { useIsMobile } from "../hooks/isMobile";
 import { baseUrl } from "../utils";
@@ -56,8 +57,8 @@ export function ProfessionalLife() {
   `;
 
   return (
-    <div style={{width: isMobile ? '' : '75%', margin: 35}}>
-      <MarkdownPage content={content} imageStyles={{width: isMobile ? '70%' : '30%', textAlign: 'center', objectFit: 'cover'}}/>
+    <div className='professionalLife' style={{width: isMobile ? '' : '75%', padding: 35}}>
+      <MarkdownPage content={content} imageStyles={{width: isMobile ? '70%' : '30%', objectFit: 'cover'}}/>
     </div>
   );
 }

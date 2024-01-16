@@ -8,7 +8,7 @@ export function About() {
   return (
     <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', width: isMobile ? '100%' : '75%'}}>
       <img style={{width: isMobile ? '90%' : '45%', height: 'auto', objectFit: 'cover', marginTop: 20, borderRadius: 20 }} src='images/profile_med.jpg'/>
-      <div style={{margin: '0px 35px'}}>
+      <div className='about' style={{margin: '0px 35px'}}>
         <h1>Hi, I'm Derek!</h1>
         <p>
           I'm a software developer by profession and hobby, with a passion for building programs that simplify or automate workflows.
