@@ -2,6 +2,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { Link } from "react-router-dom";
 
 //Using the example from https://github.com/remarkjs/react-markdown?tab=readme-ov-file#use-custom-components-syntax-highlight
 //that should also provide syntax highlighting
@@ -26,6 +27,10 @@ export function MarkdownPage(props) {
               {children}
             </code>
           )
+        },
+        a(linkProps) {
+          //Allow custom markdown to create a "open in new tab" link like [PCT 2015|_blank](http://pct.derekantrican.com)
+          return <Link to={linkProps.href} target={linkProps.children.includes('|_blank') ? '_blank' : ''}>{linkProps.children.split('|')[0]}</Link>;
         },
         img(imgProps) {
           return <img style={{...props.imageStyles}} {...imgProps}/>;
