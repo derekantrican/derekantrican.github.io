@@ -13,6 +13,12 @@ export function About() {
   I currently work as a Software Engineer for Microsoft on the Office Engineering team, creating tools to support those who work on Office products.
 
   I also like the outdoors: rock climbing, camping, hiking ([PCT 2015|_blank](http://pct.derekantrican.com)), etc!
+
+  ## Personality
+
+  I'm a very driven person and, inspired by the quote _"Be the change you wish to see in the world"_, try to do just that.
+  So I try to stay on top of communication, help others improve their use of technology (eg with automation), and invite foreigners
+  and refugees into my home ([Tea Time|_blank](https://tea-time.social)).
   `;
 
   return (
