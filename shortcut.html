@@ -99,6 +99,7 @@
       const {
         useState,
         useEffect,
+        useRef,
       } = React;
 
       const convertMarkdown = (text) => {
@@ -182,6 +183,8 @@
         const columns = Array.from(Array(8).keys());
         const rows = Array.from(Array(4).keys());
 
+        const todoistApiKeyBox = useRef(null);
+
         return (
             <div style={{display: 'flex', flexDirection: 'row', height: 'calc(100% - 16px)', padding: 8,
                          backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
@@ -194,7 +197,16 @@
                 </div>
                 <div style={{flex: '1 0 0'}}/>
                 <div style={{width: 300}}>
-                  {!todoistApiKey ? <TodoistTask content='NO TODOIST API KEY (set in local storage via devtools)'/> : null}
+                  {!todoistApiKey ?
+                    <div style={{display: 'flex', flexDirection: 'row', backgroundColor: '#e44232', padding: 10, borderRadius: 10, margin: 5}}>
+                      <input ref={todoistApiKeyBox} style={{backgroundColor: 'white', color: '#e44232', width: '100%', marginRight: 5}} type='text' placeholder='Insert Todoist API key'/>
+                      <button style={{height: 30, width: 40}} onClick={() => { localStorage.setItem('todoistApiKey', todoistApiKeyBox.current.value); window.location.reload();}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                          <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" transform ="rotate(43, 4, 4)"/>
+                        </svg>
+                      </button>
+                    </div>
+                  : null}
                   {tasks ?
                     <div style={{overflowWrap: 'anywhere', overflowY: 'auto', height: '100%'}}>
                       {tasks.map(t => 
