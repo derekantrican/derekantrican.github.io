@@ -27,7 +27,7 @@ export function Layout(props) {
   ) : (
     <div style={{display: 'flex', flexDirection: 'row', height: '100%'}}>
       <Sidebar isOpen={true}/>
-      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', overflowY: 'scroll'}}>
+      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', overflow: 'hidden'}}>
         {props.children}
       </div>
     </div>

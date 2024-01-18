@@ -57,7 +57,7 @@ export function ProfessionalLife() {
   `;
 
   return (
-    <div className='professionalLife' style={{width: isMobile ? '' : '75%', height: '100%', padding: 35}}>
+    <div className='professionalLife' style={{height: '100%', overflowY: 'auto', padding: '20px 10%'}}>
       <MarkdownPage content={content} imageStyles={{objectFit: 'cover'}}/>
     </div>
   );
