@@ -5,6 +5,8 @@ import { useIsMobile } from '../hooks/isMobile';
 export function Sidebar(props) {
   const isMobile = useIsMobile();
 
+  //Todo: fix the issue of double scrollbars when the height is too small for the sidebar
+
   return (
     <div className={isMobile ? props.isOpen ? "sidebar open" : "sidebar" : ""} style={isMobile ? {width: '100%'} : {width: 400, borderWidth: '0px 2px 0px 0px', borderStyle: 'solid'}}>
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: isMobile ? 'calc(100% - 50px)' : '100%'}}>
@@ -19,7 +21,6 @@ export function Sidebar(props) {
             {/*Subpages: Hobbies, Turkiye, etc?*/}
             <NavBarLink name="Professional life" level="1" path='/about/professionallife'/>{/*Todo: this could also have my 'resume' link at the bottom*/}
             <NavBarLink name="Hobbies" level="1" path='/about/hobbies'/>
-            <NavBarLink name="Türkiye" level="1"/>
           </NavBarLink>
           <NavBarLink name="Calendar" path='/calendar'/>
           <NavBarLink name="Projects" path='/projects'>
