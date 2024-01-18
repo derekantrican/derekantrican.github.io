@@ -15,10 +15,10 @@ export function Sidebar(props) {
           </div>
         </Link>
         <div style={{display: 'flex', flexDirection: 'column', width: '100%', height: '100%'}}>
-          <NavBarLink name="About Me" top="true" path='/about' selected={window.location.pathname == '/about'}>
+          <NavBarLink name="About Me" top="true" path='/about' selected={window.location.pathname.includes('/about')}>
             {/*Subpages: Hobbies, Turkiye, etc?*/}
-            <NavBarLink name="Professional life" level="1" path='/about/professionallife'/>{/*Todo: this can also have my 'resume' link at the bottom*/}
-            <NavBarLink name="Hobbies" level="1"/>
+            <NavBarLink name="Professional life" level="1" path='/about/professionallife'/>{/*Todo: this could also have my 'resume' link at the bottom*/}
+            <NavBarLink name="Hobbies" level="1" path='/about/hobbies'/>
             <NavBarLink name="Türkiye" level="1"/>
           </NavBarLink>
           <NavBarLink name="Calendar" path='/calendar'/>

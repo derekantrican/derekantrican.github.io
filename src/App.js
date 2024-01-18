@@ -2,10 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Layout } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
-import { About } from './pages/About';
-import { Home } from './pages/Home';
-import { Calendar } from './pages/Calendar';
-import { ProfessionalLife } from './pages/ProfessionalLife';
+import { About, Calendar, Hobbies, Home, ProfessionalLife } from './pages';
 
 //I can also use this site for "hidden" pages (like Turkish Resources, etc)
 
@@ -27,6 +24,11 @@ function App() {
         <Route path='/about/professionallife' element={
           <Layout title='Professional life'>
             <ProfessionalLife/>
+          </Layout>
+        }/>
+        <Route path='/about/hobbies' element={
+          <Layout title='Hobbies'>
+            <Hobbies/>
           </Layout>
         }/>
         <Route path='/calendar' element={
