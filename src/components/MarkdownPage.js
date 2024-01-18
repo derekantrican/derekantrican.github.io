@@ -33,8 +33,10 @@ export function MarkdownPage(props) {
           return <Link to={linkProps.href} target={linkProps.children.includes('|_blank') ? '_blank' : ''}>{linkProps.children.split('|')[0]}</Link>;
         },
         img(imgProps) {
-          const width = imgProps.alt.includes('|') ? imgProps.alt.split('|')[1] : 'auto';
-          return <img style={{width: width, ...props.imageStyles}} {...imgProps} alt={imgProps.alt.split('|')[0]}/>;
+          const altProps = imgProps.alt.split('|');
+          const width = altProps.length > 1 ? altProps[1] : 'auto';
+          const textAlign = altProps.length > 2 ? altProps[2] : 'none';
+          return <img style={{width: width, float: textAlign, ...props.imageStyles}} {...imgProps} alt={imgProps.alt.split('|')[0]}/>;
         }
       }}/>
   );
