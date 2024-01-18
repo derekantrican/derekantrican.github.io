@@ -9,7 +9,7 @@ export function ProfessionalLife() {
   const isMobile = useIsMobile();
 
   const content = `
-  ![](${baseUrl()}/images/microsoft_logo.png)
+  ![Microsoft|${isMobile ? '70%' : '30%'}](${baseUrl()}/images/microsoft_logo.png)
   
   ## What part of Microsoft do I work for?
   
@@ -58,7 +58,7 @@ export function ProfessionalLife() {
 
   return (
     <div className='professionalLife' style={{width: isMobile ? '' : '75%', height: '100%', padding: 35}}>
-      <MarkdownPage content={content} imageStyles={{width: isMobile ? '70%' : '30%', objectFit: 'cover'}}/>
+      <MarkdownPage content={content} imageStyles={{objectFit: 'cover'}}/>
     </div>
   );
 }
