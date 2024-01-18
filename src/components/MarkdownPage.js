@@ -3,10 +3,16 @@ import remarkGfm from "remark-gfm";
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { Link } from "react-router-dom";
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
+import '../styles/imgZoomStyles.css';
+import { useIsMobile } from "../hooks/isMobile";
 
 //Using the example from https://github.com/remarkjs/react-markdown?tab=readme-ov-file#use-custom-components-syntax-highlight
 //that should also provide syntax highlighting
 export function MarkdownPage(props) {
+  const isMobile = useIsMobile();
+
   return (
     <Markdown remarkPlugins={[remarkGfm]} 
       children={props.content}
@@ -36,7 +42,11 @@ export function MarkdownPage(props) {
           const altProps = imgProps.alt.split('|');
           const width = altProps.length > 1 ? altProps[1] : 'auto';
           const textAlign = altProps.length > 2 ? altProps[2] : 'none';
-          return <img style={{width: width, float: textAlign, ...props.imageStyles}} {...imgProps} alt={imgProps.alt.split('|')[0]}/>;
+          return (
+            <Zoom classDialog="zoom-modal" zoomMargin={isMobile ? 10 : 45}>{/*Ability to click on & zoom an image*/}
+              <img style={{width: width, float: textAlign, ...props.imageStyles}} {...imgProps} alt={imgProps.alt.split('|')[0]}/>
+            </Zoom>
+          );
         }
       }}/>
   );
