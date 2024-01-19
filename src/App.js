@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Layout } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
-import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife } from './pages';
+import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife, Projects } from './pages';
 
 //Todo: I can also use this site for "hidden" pages (like Turkish Resources, etc)
 //Todo: maybe I can have a central list of these pages somewhere that can be referenced here (like `pages.map(p => <Route ...)`)
@@ -36,6 +36,11 @@ function App() {
         <Route path='/calendar' element={
           <Layout title='Calendar'>
             <Calendar/>
+          </Layout>
+        }/>
+        <Route path='/projects' element={
+          <Layout title='Projects'>
+            <Projects/>
           </Layout>
         }/>
         <Route path='/blogs' element={

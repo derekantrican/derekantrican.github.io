@@ -4,6 +4,7 @@ import { Calendar } from "./Calendar";
 import { Hobbies } from "./Hobbies";
 import { Home } from "./Home";
 import { ProfessionalLife } from "./ProfessionalLife";
+import { Projects } from "./Projects";
 
 export {
   About,
@@ -11,5 +12,6 @@ export {
   Calendar,
   Hobbies,
   Home,
-  ProfessionalLife
+  ProfessionalLife,
+  Projects,
 };
