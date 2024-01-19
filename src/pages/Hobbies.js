@@ -13,7 +13,7 @@ export function Hobbies() {
   ## Programming
 
   ![|${isMobile ? '50%' : '15%'}|right](${baseUrl()}/images/programming.png)
-  
+
   Programming is by far my biggest hobby. I love building different [projects](${baseUrl()}/projects). Basically, if there's
   either not a program out there for something I want (or there is, but it's too expensive or it doesn't work the way I want),
   then I create my own tool or modification (eg Chrome extension). I like learning new technologies & languages and expanding
@@ -53,6 +53,10 @@ export function Hobbies() {
   potluck, entertainment, prayer, and insightful thoughts shared from each side. Over 200 people came and it is always a great evening
   for all!
   `;
+
+  //Other hobbies I could list:
+  // - 3D printing
+  // - Cooking?
 
   return (
     <div className='hobbies' style={{height: '100%', overflowY: 'auto', padding: '20px 10%'}}>
