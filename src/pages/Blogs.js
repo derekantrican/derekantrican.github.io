@@ -56,7 +56,7 @@ export function Blogs() {
         <div style={{display: 'flex', flexDirection: 'column', overflowY: 'auto'}}>
           {posts.map(post =>
             //Todo: posts should be "lazy loaded" when they are scolled into view (if possible)
-            <PostCard key={post.Id} post={post}/>
+            <PostCard key={post.id} post={post}/>
           )}
         </div>
       </div>
@@ -97,9 +97,9 @@ function PostCard(props) {
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', width: 'calc(100% - 60px)', padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
-      <h3 style={{marginTop: 0}}>{props.post.Title}</h3>
-      <h4 style={{marginTop: 0}}>{props.post.Published}</h4>
-      <p dangerouslySetInnerHTML={{__html: props.post.Content}}/>
+      <h3 style={{marginTop: 0}}>{props.post.title}</h3>
+      <h4 style={{marginTop: 0}}>{props.post.published}</h4>
+      <p dangerouslySetInnerHTML={{__html: props.post.content}}/>
     </div>
   );
 }

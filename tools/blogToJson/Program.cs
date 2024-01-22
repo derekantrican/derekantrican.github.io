@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 if (args.Length < 1 || string.IsNullOrEmpty(args[0]))
 {
@@ -26,7 +27,11 @@ using (HttpClient client = new HttpClient())
     }
 }
 
-File.WriteAllText(serializeFile, JsonConvert.SerializeObject(posts, Formatting.Indented));
+File.WriteAllText(serializeFile, JsonConvert.SerializeObject(posts, new JsonSerializerSettings
+{
+    Formatting = Formatting.Indented,
+    ContractResolver = new CamelCasePropertyNamesContractResolver(),
+}));
 
 class BloggerResponse
 {
