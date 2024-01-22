@@ -88,7 +88,7 @@ function ProjectCard(props) {
           </a>  
         : null}
       </div>
-      <p style={{marginTop: 0, marginBottom: 5}}>{props.project.description}</p>
+      <p style={{marginTop: 0}}>{props.project.description}</p>
       <div style={{alignSelf: 'start', width: '100%'}}>
         <h4 style={{marginTop: 0}}>Languages:</h4>
         <div style={{display: 'flex', flexFlow: 'wrap'}}>
