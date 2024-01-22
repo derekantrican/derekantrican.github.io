@@ -65,6 +65,7 @@ export const projects = [{
   users : "~25,000",
   icon : "https://bulkeditcalendarevents.com/images/screenshots/main.png",
   website : "https://bulkeditcalendarevents.com",
+  type: 'Desktop',
   languages : [
     "C#",
     "XAML",
@@ -81,6 +82,7 @@ export const projects = [{
   users : "1,200 stars on GitHub, probably 5-10x that many users",
   icon : "https://derekantrican.com/images/gas-ics-sync.png",
   github : "https://github.com/derekantrican/GAS-ICS-Sync",
+  type: 'Script',
   languages : [
     "Javascript",
   ],
@@ -93,6 +95,7 @@ export const projects = [{
   description : "An HTML scraper and reddit bot to link MountainProject.com and various climbing subreddits, replying automatically to posts with climbing information",
   icon : "https://derekantrican.com/images/reddit_bot.png",
   github : "https://github.com/derekantrican/MountainProject",
+  type: 'Bot',
   languages : [
     "C#",
   ],
@@ -107,6 +110,7 @@ export const projects = [{
   icon : "https://i.imgur.com/EXPba7o.png",
   website: "https://tea-time.social",
   github : "https://github.com/derekantrican/TeaTime",
+  type: 'Website',
   languages : [
     "Javascript",
   ],

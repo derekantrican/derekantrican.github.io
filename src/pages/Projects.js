@@ -8,6 +8,7 @@ export function Projects() {
   const isMobile = useIsMobile();
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [selectedTechnologies, setSelectedTechnologies] = useState([]);
+  const [showProjectDetails, setShowProjectDetails] = useState(false);
   const [projects, setProjects] = useState(project_data.projects);
   //Todo: use page params (eg `?language=react&type=script`) to populate filter
   //Todo: I may want to use the GitHub API to pre-populate this a bit
@@ -31,11 +32,15 @@ export function Projects() {
             setSelectedTechnologies(vals);
             filterProjects(selectedLanguages, vals);
           }}/>
+          <div style={{fontSize: '1.3rem'}}>
+            <input style={{marginLeft: 20, marginRight: 10}} type='checkbox' onChange={e => setShowProjectDetails(e.target.checked)}/>{/*Todo: style checkbox better*/}
+            Show project details
+          </div>
         </div>
         {/*Todo: figure out how to keep the 'Filter' at the top & only scroll the projects area*/}
         <div style={{display: 'flex', flexFlow: 'wrap', overflowY: 'auto'}}>
           {projects.map(project =>
-            <ProjectCard key={project.name} project={project}/>
+            <ProjectCard key={project.name} project={project} showDetails={showProjectDetails}/>
           )}
         </div>
       </div>
@@ -89,24 +94,26 @@ function ProjectCard(props) {
         : null}
       </div>
       <p style={{marginTop: 0}}>{props.project.description}</p>
-      <div style={{alignSelf: 'start', width: '100%'}}>
-        <h4 style={{marginTop: 0}}>Languages:</h4>
-        <div style={{display: 'flex', flexFlow: 'wrap'}}>
-          {props.project.languages.map(lang =>
-            <img style={{objectFit: 'contain', height: 40, width: 40}} 
-              src={project_data.languages.find(lang_data => lang_data.name == lang).icon}
-              title={lang}/>
-          )}
+      {props.showDetails ?
+        <div style={{alignSelf: 'start', width: '100%'}}>
+          <h4 style={{marginTop: 0}}>Languages:</h4>
+          <div style={{display: 'flex', flexFlow: 'wrap'}}>
+            {props.project.languages.map(lang =>
+              <img style={{objectFit: 'contain', height: 40, width: 40}} 
+                src={project_data.languages.find(lang_data => lang_data.name == lang).icon}
+                title={lang}/>
+            )}
+          </div>
+          <h4>Technologies:</h4>
+          <div style={{display: 'flex', flexFlow: 'wrap'}}>
+            {props.project.technologies.map(tech =>
+              <img style={{objectFit: 'contain', height: 40, width: 40}}
+                src={project_data.technologies.find(tech_data => tech_data.name == tech).icon}
+                title={tech}/>
+            )}
+          </div>
         </div>
-        <h4>Technologies:</h4>
-        <div style={{display: 'flex', flexFlow: 'wrap'}}>
-          {props.project.technologies.map(tech =>
-            <img style={{objectFit: 'contain', height: 40, width: 40}}
-              src={project_data.technologies.find(tech_data => tech_data.name == tech).icon}
-              title={tech}/>
-          )}
-        </div>
-      </div>
+      : null}
     </div>
   );
 }
