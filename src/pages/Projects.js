@@ -29,7 +29,7 @@ export function Projects() {
 
   return (
     <div className='projects' style={{height: '100%', width: '100%'}}>
-      <div style={{padding: '20px 10%'}}>
+      <div style={{padding: isMobile ? 20 : '20px 10%'}}>
         {isMobile ? 
           <div style={{display: 'flex', alignItems: 'center', marginLeft: 10,  borderBottom: '2px solid white'}} onClick={() => setShowFilter(!showFilter)}>
             <h3>Filter</h3>
