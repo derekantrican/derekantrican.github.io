@@ -75,10 +75,22 @@ function ProjectCard(props) {
   return (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: isMobile ? '100%' : 300, padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
       <img style={{objectFit: 'contain', height: 200, width: isMobile ? '100%' : 300}} src={props.project.icon}/>
-      <h3>{props.project.name}</h3>
-      <p style={{marginTop: 0}}>{props.project.description}</p>
-      <div style={{alignSelf: 'start'}}>
-        <h4>Languages:</h4>
+      <h3 style={{marginBottom: 0}}>{props.project.name}</h3>
+      <div style={{display: 'flex'}}>{/*Todo: there's gotta be a better way to display the website/github icons*/}
+        {props.project.website ?
+          <a style={{margin: 10}} href={props.project.website} target='_blank'>
+            <i style={{height: 30, width: 30, fontSize: '30px', color: 'white'}} className='bi bi-globe2'/>
+          </a>  
+        : null}
+        {props.project.github ?
+          <a style={{margin: 10}} href={props.project.github} target='_blank'>
+            <i style={{height: 30, width: 30, fontSize: '30px', color: 'white'}} className='bi bi-github'/>
+          </a>  
+        : null}
+      </div>
+      <p style={{marginTop: 0, marginBottom: 5}}>{props.project.description}</p>
+      <div style={{alignSelf: 'start', width: '100%'}}>
+        <h4 style={{marginTop: 0}}>Languages:</h4>
         <div style={{display: 'flex', flexFlow: 'wrap'}}>
           {props.project.languages.map(lang =>
             <img style={{objectFit: 'contain', height: 40, width: 40}} 
