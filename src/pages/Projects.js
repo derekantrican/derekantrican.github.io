@@ -6,31 +6,48 @@ import { useState } from 'react';
 
 export function Projects() {
   const isMobile = useIsMobile();
+  const uniqueProjectTypes = project_data.projects.map(p => p.type).filter((v, i, a) => a.indexOf(v) === i);
+
+  const [showFilter, setShowFilter] = useState(!isMobile);
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [selectedTechnologies, setSelectedTechnologies] = useState([]);
+  const [selectedTypes, setSelectedTypes] = useState(uniqueProjectTypes);
   const [showProjectDetails, setShowProjectDetails] = useState(false);
   const [projects, setProjects] = useState(project_data.projects);
   //Todo: use page params (eg `?language=react&type=script`) to populate filter
   //Todo: I may want to use the GitHub API to pre-populate this a bit
 
-  const filterProjects = (languages, technologies) => {
+
+  const filterProjects = (languages, technologies, types) => {
     setProjects(project_data.projects.filter(p => 
       (languages.length == 0 || languages.every(l => p.languages.includes(l))) &&
-      (technologies.length == 0 || technologies.every(t => p.technologies.includes(t)))
+      (technologies.length == 0 || technologies.every(t => p.technologies.includes(t))) &&
+      (types.length == 0 || types.includes(p.type))
     ));
   };
 
   return (
     <div className='projects' style={{height: '100%', width: '100%'}}>
       <div style={{padding: '20px 10%'}}>
-        <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'start', alignItems: 'center', padding: isMobile ? 10 : '10px 10px 10px 0px', borderBottom: '2px solid white', marginBottom: 10}}>
+        {isMobile ? 
+          <div style={{display: 'flex', alignItems: 'center', marginLeft: 10,  borderBottom: '2px solid white'}} onClick={() => setShowFilter(!showFilter)}>
+            <h3>Filter</h3>
+            <div style={{flex: '1 0 0'}} />
+            <i style={{height: 30, width: 30, fontSize: '30px', color: 'white'}} className={`bi bi-chevron-${showFilter ? 'down' : 'right'}`}/>
+          </div>
+        : null}
+        <div style={{display: showFilter ? 'flex' : 'none', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'start', alignItems: 'center', padding: isMobile ? 10 : '10px 10px 10px 0px', borderBottom: '2px solid white', marginBottom: 10}}>
           <Dropdown name='Languages' options={project_data.languages.map(l => l.name)} setSelectedVals={vals => {
             setSelectedLanguages(vals);
-            filterProjects(vals, selectedTechnologies);
+            filterProjects(vals, selectedTechnologies, selectedTypes);
           }}/>
           <Dropdown name='Technologies' options={project_data.technologies.map(l => l.name)} setSelectedVals={vals => {
             setSelectedTechnologies(vals);
-            filterProjects(selectedLanguages, vals);
+            filterProjects(selectedLanguages, vals, selectedTypes);
+          }}/>
+          <Dropdown name='Type' options={uniqueProjectTypes} setSelectedVals={vals => {
+            setSelectedTypes(vals);
+            filterProjects(selectedLanguages, selectedTechnologies, vals);
           }}/>
           <div style={{fontSize: '1.3rem'}}>
             <input style={{marginLeft: 20, marginRight: 10}} type='checkbox' onChange={e => setShowProjectDetails(e.target.checked)}/>{/*Todo: style checkbox better*/}
