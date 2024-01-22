@@ -20,9 +20,9 @@ export function Projects() {
   };
 
   return (
-    <div className='projects' style={{height: '100%', width: '100%', overflowY: 'auto'}}>
+    <div className='projects' style={{height: '100%', width: '100%'}}>
       <div style={{padding: '20px 10%'}}>
-        <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', padding: 10, borderBottom: '2px solid white'}}>
+        <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'start', alignItems: 'center', padding: isMobile ? 10 : '10px 10px 10px 0px', borderBottom: '2px solid white', marginBottom: 10}}>
           <Dropdown name='Languages' options={project_data.languages.map(l => l.name)} setSelectedVals={vals => {
             setSelectedLanguages(vals);
             filterProjects(vals, selectedTechnologies);
@@ -32,7 +32,8 @@ export function Projects() {
             filterProjects(selectedLanguages, vals);
           }}/>
         </div>
-        <div style={{display: 'flex', flexFlow: 'wrap'}}>
+        {/*Todo: figure out how to keep the 'Filter' at the top & only scroll the projects area*/}
+        <div style={{display: 'flex', flexFlow: 'wrap', overflowY: 'auto'}}>
           {projects.map(project =>
             <ProjectCard key={project.name} project={project}/>
           )}
@@ -53,13 +54,12 @@ function Dropdown(props) {
   };
 
   return (
-    <div style={{width: isMobile ? 'auto' : 300, margin: 10}}>
+    <div style={{width: isMobile ? '100%' : 300, margin: isMobile ? 10 : '10px 10px 10px 0px'}}>
       <Select styles={styles}
         placeholder={props.name}
         options={props.options.map(o => {return {value: o, label: o}/*TEMP?*/})}
         closeMenuOnSelect={false}
         components={animatedComponents}
-        // onChange={vals => console.log('selected options:', vals.map(val => val.value))}
         onChange={vals => props.setSelectedVals(vals.map(val => val.value))}
         isMulti
         />
@@ -73,7 +73,7 @@ function ProjectCard(props) {
   //Todo: implement links to projects, repos, & langs/techs
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: isMobile ? '100%' : 300, padding: 20, margin: 10, borderRadius: 15, backgroundColor: 'lightgray', color: 'black'}}>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: isMobile ? '100%' : 300, padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
       <img style={{objectFit: 'contain', height: 200, width: isMobile ? '100%' : 300}} src={props.project.icon}/>
       <h3>{props.project.name}</h3>
       <p style={{marginTop: 0}}>{props.project.description}</p>
@@ -81,13 +81,17 @@ function ProjectCard(props) {
         <h4>Languages:</h4>
         <div style={{display: 'flex', flexFlow: 'wrap'}}>
           {props.project.languages.map(lang =>
-            <img style={{objectFit: 'contain', height: 40, width: 40}} src={project_data.languages.find(lang_data => lang_data.name == lang).icon}/>
+            <img style={{objectFit: 'contain', height: 40, width: 40}} 
+              src={project_data.languages.find(lang_data => lang_data.name == lang).icon}
+              title={lang}/>
           )}
         </div>
         <h4>Technologies:</h4>
         <div style={{display: 'flex', flexFlow: 'wrap'}}>
           {props.project.technologies.map(tech =>
-            <img style={{objectFit: 'contain', height: 40, width: 40}} src={project_data.technologies.find(tech_data => tech_data.name == tech).icon}/>
+            <img style={{objectFit: 'contain', height: 40, width: 40}}
+              src={project_data.technologies.find(tech_data => tech_data.name == tech).icon}
+              title={tech}/>
           )}
         </div>
       </div>

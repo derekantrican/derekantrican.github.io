@@ -1,3 +1,5 @@
+//Todo: a lot of these icons are links. Maybe it would be helpful to have my own local version (one benefit would be smaller sizes for faster loading)
+
 export const languages = [{
   name : "C#",
   link : "https://docs.microsoft.com/en-us/dotnet/csharp/",
@@ -53,6 +55,8 @@ export const technologies = [{
 // - 
 //For some of these, they're not a great show of skill, but they might be worth adding just for more listings
 
+//I could also add non-tech projects (eg 3D printing stuff, plant stuff, etc). As long as I have something to show.
+
 //I could also talk about things on my HomeServer - but all that stuff is private
 
 export const projects = [{
@@ -94,5 +98,19 @@ export const projects = [{
   ],
   technologies : [
     "Visual Studio",
+  ],
+},
+{
+  name : "Tea Time",
+  description : `A full React-based website for our weekly community group we host in our home. This was built to easily explain the concept, list partner groups (that might
+  be geographically closer), and handle sign-ups.`,
+  icon : "https://i.imgur.com/EXPba7o.png",
+  website: "https://tea-time.social",
+  github : "https://github.com/derekantrican/TeaTime",
+  languages : [
+    "Javascript",
+  ],
+  technologies : [
+    "React",
   ],
 }];
