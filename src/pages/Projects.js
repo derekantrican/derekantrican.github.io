@@ -1,4 +1,5 @@
 import * as project_data from '../data/projects.js';
+import '../styles/projects.css';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { useIsMobile } from '../hooks/isMobile';
@@ -49,10 +50,11 @@ export function Projects() {
             setSelectedTypes(vals);
             filterProjects(selectedLanguages, selectedTechnologies, vals);
           }}/>
-          <div style={{fontSize: '1.3rem'}}>
-            <input style={{marginLeft: 20, marginRight: 10}} type='checkbox' onChange={e => setShowProjectDetails(e.target.checked)}/>{/*Todo: style checkbox better*/}
+          <label style={{marginLeft: 20}} className="container">
             Show project details
-          </div>
+            <input type='checkbox' onChange={e => setShowProjectDetails(e.target.checked)}/>
+            <span className="checkmark"></span>
+          </label>
         </div>
         {/*Todo: figure out how to keep the 'Filter' at the top & only scroll the projects area*/}
         <div style={{display: 'flex', flexFlow: 'wrap', overflowY: 'auto'}}>
