@@ -7,8 +7,6 @@ import { Dropdown } from '../components/Dropdown';
 export function Blogs() {
   const isMobile = useIsMobile();
   //Todo: use page params (eg `?blog=pct&type=non-automated`) to populate filter
-  //Todo: if possible, use the blogspot API (https://developers.google.com/blogger/docs/3.0/using)
-  //   or reverse-engineer a similar solution myself (that doesn't need Oauth)
 
   const [showFilter, setShowFilter] = useState(!isMobile);
   const [selectedBlog, setSelectedBlog] = useState('pct');
@@ -55,6 +53,7 @@ export function Blogs() {
   };
 
   //Todo: allow clicking on images to expand (like with MarkdownPage)
+  //   Currently, some images are already linked to an external image, but that opens in a new tab. Probably fine enough for now.
 
   return (
     <div className='blogs' style={{height: '100%', width: '100%', overflowY: 'auto'}}>
