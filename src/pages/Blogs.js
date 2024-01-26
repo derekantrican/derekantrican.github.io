@@ -1,3 +1,4 @@
+import '../styles/blogs.css';
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/isMobile";
 import Select from 'react-select';
@@ -114,10 +115,9 @@ function PostCard(props) {
   //Todo: allow expanding of a post?
   //Todo: hyperlink the title to the blog post on the blog
   //Todo: display the published date better
-  //Todo: also fix images on mobile (expanding outside of the view)
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', width: 'calc(100% - 60px)', padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
+    <div className='blogPost' style={{display: 'flex', flexDirection: 'column', width: 'calc(100% - 60px)', padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
       <h3 style={{marginTop: 0}}>{props.post.title}</h3>
       <h4 style={{marginTop: 0}}>{props.post.published.toLocaleDateString()}</h4>
       <p style={{overflowWrap: 'anywhere'}} dangerouslySetInnerHTML={{__html: props.post.content}}/>
