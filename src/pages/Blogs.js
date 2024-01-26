@@ -50,7 +50,6 @@ export function Blogs() {
   };
 
   //Todo: allow clicking on images to expand (like with MarkdownPage)
-  //Tood: links should open in a new tab
 
   return (
     <div className='blogs' style={{height: '100%', width: '100%', overflowY: 'auto'}}>
