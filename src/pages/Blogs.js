@@ -12,7 +12,7 @@ export function Blogs() {
 
   const [showFilter, setShowFilter] = useState(!isMobile);
   const [selectedBlog, setSelectedBlog] = useState('pct');
-  const [sortOrder, setSortOrder] = useState('Newest first');
+  const [sortOrder, setSortOrder] = useState('Oldest first');
   const [selectedLabels, setSelectedLabels] = useState([]);
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
@@ -28,6 +28,7 @@ export function Blogs() {
 
       var responsePosts = await response.json();
       responsePosts.forEach(p => p.published = new Date(p.published));
+      responsePosts = sortPosts(responsePosts, sortOrder);
 
       setPosts(responsePosts);
       setFilteredPosts(responsePosts);
@@ -36,17 +37,21 @@ export function Blogs() {
     getPosts();
   }, [selectedBlog]);
 
-  const filterPosts = (labels, sort) => {
-    setFilteredPosts(posts.filter(p => 
-      (labels.length == 0 || p.labels.intersection(labels).length > 0)
-    ).sort((a, b) => {
+  const sortPosts = (posts, sort) => {
+    return posts.sort((a, b) => {
       if (sort == 'Newest first') {
         return b.published.getTime() - a.published.getTime();
       }
       else if (sort == 'Oldest first') {
         return a.published.getTime() - b.published.getTime();
       }
-    }));
+    })
+  }
+
+  const filterPosts = (labels, sort) => {
+    setFilteredPosts(sortPosts(posts.filter(p => 
+      (labels.length == 0 || p.labels.intersection(labels).length > 0)
+    ), sort));
   };
 
   //Todo: allow clicking on images to expand (like with MarkdownPage)
@@ -62,7 +67,7 @@ export function Blogs() {
           </div>
         : null}
         <div style={{display: showFilter ? 'flex' : 'none', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'start', alignItems: 'center', padding: isMobile ? 10 : '10px 10px 10px 0px', borderBottom: '2px solid white', marginBottom: 10}}>
-          <Dropdown name='Order' options={['Newest first', 'Oldest first']} defaultValue='Newest first' setSelected={val => {
+          <Dropdown name='Order' options={['Newest first', 'Oldest first']} defaultValue='Oldest first' setSelected={val => {
             setSortOrder(val);
             filterPosts(selectedLabels, val);
           }}/>
