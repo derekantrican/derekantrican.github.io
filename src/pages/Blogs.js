@@ -11,19 +11,45 @@ export function Blogs() {
 
   const [showFilter, setShowFilter] = useState(!isMobile);
   const [selectedBlog, setSelectedBlog] = useState('pct');
+  const [selectedLabels, setSelectedLabels] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
 
   useEffect(() => {
     async function getPosts() {
+      setPosts([]);
+      setFilteredPosts([]);
+
       const response = await fetch(`http://localhost:3000/blogs/${selectedBlog}.json`);
       // console.log(await response.json());
-      setPosts(await response.json());
+
+      var responsePosts = await response.json();
+      setPosts(responsePosts);
+      setFilteredPosts(responsePosts);
     }
 
     getPosts();
   }, [selectedBlog]);
 
-  //Todo: allow filtering by labels
+  //Todo: move these functions to utils class?
+  Array.prototype.intersection = function(otherArray) {
+    return this.filter(x => otherArray.includes(x));
+  }
+
+  Array.prototype.distinct = function() {
+    return this.filter((value, index, array) => array.indexOf(value) === index);
+  }
+
+  Array.prototype.selectAll = function(selector) {
+    return this.map(selector).flat(1);
+  }
+
+  const filterPosts = (labels) => {
+    setFilteredPosts(posts.filter(p => 
+      (labels.length == 0 || p.labels.intersection(labels).length > 0)
+    ));
+  };
+
   //Todo: allow sorting (eg newest to oldest or vice-versa)
   //Todo: allow clicking on images to expand (like with MarkdownPage)
   //Tood: links should open in a new tab
@@ -39,22 +65,14 @@ export function Blogs() {
           </div>
         : null}
         <div style={{display: showFilter ? 'flex' : 'none', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'start', alignItems: 'center', padding: isMobile ? 10 : '10px 10px 10px 0px', borderBottom: '2px solid white', marginBottom: 10}}>
-          {/* <Dropdown name='Languages' options={project_data.languages.map(l => l.name)} setSelectedVals={vals => {
-            setSelectedLanguages(vals);
-            filterProjects(vals, selectedTechnologies, selectedTypes);
+          <Dropdown name='Labels' options={posts.selectAll(p => p.labels).distinct()} setSelectedVals={vals => {
+            setSelectedLabels(vals);
+            filterPosts(vals);
           }}/>
-          <Dropdown name='Technologies' options={project_data.technologies.map(l => l.name)} setSelectedVals={vals => {
-            setSelectedTechnologies(vals);
-            filterProjects(selectedLanguages, vals, selectedTypes);
-          }}/>
-          <Dropdown name='Type' options={uniqueProjectTypes} setSelectedVals={vals => {
-            setSelectedTypes(vals);
-            filterProjects(selectedLanguages, selectedTechnologies, vals);
-          }}/> */}
         </div>
         {/*Todo: figure out how to keep the 'Filter' at the top & only scroll the posts area*/}
         <div style={{display: 'flex', flexDirection: 'column', overflowY: 'auto'}}>
-          {posts.map(post =>
+          {filteredPosts.map(post =>
             //Todo: posts should be "lazy loaded" when they are scolled into view (if possible)
             <PostCard key={post.id} post={post}/>
           )}
@@ -99,7 +117,7 @@ function PostCard(props) {
   return (
     <div style={{display: 'flex', flexDirection: 'column', width: 'calc(100% - 60px)', padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
       <h3 style={{marginTop: 0}}>{props.post.title}</h3>
-      <h4 style={{marginTop: 0}}>{props.post.published}</h4>
+      <h4 style={{marginTop: 0}}>{new Date(props.post.published).toLocaleDateString()}</h4>
       <p style={{overflowWrap: 'anywhere'}} dangerouslySetInnerHTML={{__html: props.post.content}}/>
     </div>
   );
