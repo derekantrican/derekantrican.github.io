@@ -17,6 +17,7 @@ export function Blogs() {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
 
+  //Todo: use react-query's 'useQuery' to improve this (https://youtu.be/vxkbf5QMA2g)
   useEffect(() => {
     async function getPosts() {
       setPosts([]);
