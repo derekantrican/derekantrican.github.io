@@ -4,6 +4,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { useIsMobile } from '../hooks/isMobile';
 import { useState } from 'react';
+import '../utils/arrayHelpers';
 
 export function Projects() {
   const isMobile = useIsMobile();
@@ -21,8 +22,8 @@ export function Projects() {
 
   const filterProjects = (languages, technologies, types) => {
     setProjects(project_data.projects.filter(p => 
-      (languages.length == 0 || languages.every(l => p.languages.includes(l))) &&
-      (technologies.length == 0 || technologies.every(t => p.technologies.includes(t))) &&
+      (languages.length == 0 || languages.intersection(p.languages).length > 0) &&
+      (technologies.length == 0 || technologies.intersection(p.technologies).length > 0) &&
       (types.length == 0 || types.includes(p.type))
     ));
   };
