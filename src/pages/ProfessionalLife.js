@@ -1,7 +1,7 @@
 import '../styles/professionalLife.css';
 import { MarkdownPage } from "../components/MarkdownPage";
 import { useIsMobile } from "../hooks/isMobile";
-import { baseUrl } from "../utils";
+import { baseUrl } from "../utils/utils";
 
 //Todo: the <p> sizing is coming from about.css. Find a way to keep that separate
 

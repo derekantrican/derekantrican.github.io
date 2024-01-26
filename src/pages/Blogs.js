@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/isMobile";
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+import '../utils/arrayHelpers';
 
 export function Blogs() {
   const isMobile = useIsMobile();
@@ -30,19 +31,6 @@ export function Blogs() {
 
     getPosts();
   }, [selectedBlog]);
-
-  //Todo: move these functions to utils class?
-  Array.prototype.intersection = function(otherArray) {
-    return this.filter(x => otherArray.includes(x));
-  }
-
-  Array.prototype.distinct = function() {
-    return this.filter((value, index, array) => array.indexOf(value) === index);
-  }
-
-  Array.prototype.selectAll = function(selector) {
-    return this.map(selector).flat(1);
-  }
 
   const filterPosts = (labels) => {
     setFilteredPosts(posts.filter(p => 

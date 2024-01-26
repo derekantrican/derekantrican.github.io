@@ -1,7 +1,7 @@
 import '../styles/hobbies.css';
 import { MarkdownPage } from "../components/MarkdownPage";
 import { useIsMobile } from "../hooks/isMobile";
-import { baseUrl } from "../utils";
+import { baseUrl } from "../utils/utils";
 
 export function Hobbies() {
   const isMobile = useIsMobile();
