@@ -98,7 +98,7 @@ function Dropdown(props) {
     <div style={{width: isMobile ? '100%' : 300, margin: isMobile ? 10 : '10px 10px 10px 0px'}}>
       <Select styles={styles}
         placeholder={props.name}
-        options={props.options.map(o => {return {value: o, label: o}/*TEMP?*/})}
+        options={props.options.map(o => {return {value: o, label: o}})}
         defaultValue={props.defaultValue ? {value: props.defaultValue, label: props.defaultValue} : null}
         closeMenuOnSelect={!props.isMulti}
         components={animatedComponents}
@@ -110,11 +110,7 @@ function Dropdown(props) {
 }
 
 function PostCard(props) {
-  const isMobile = useIsMobile();
-
-  //Todo: allow expanding of a post?
   //Todo: hyperlink the title to the blog post on the blog
-  //Todo: display the published date better
 
   return (
     <div className='blogPost' style={{display: 'flex', flexDirection: 'column', width: 'calc(100% - 60px)', padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
