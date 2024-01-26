@@ -12,6 +12,7 @@ export function Blogs() {
 
   const [showFilter, setShowFilter] = useState(!isMobile);
   const [selectedBlog, setSelectedBlog] = useState('pct');
+  const [sortOrder, setSortOrder] = useState('Newest first');
   const [selectedLabels, setSelectedLabels] = useState([]);
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
@@ -25,6 +26,8 @@ export function Blogs() {
       // console.log(await response.json());
 
       var responsePosts = await response.json();
+      responsePosts.forEach(p => p.published = new Date(p.published));
+
       setPosts(responsePosts);
       setFilteredPosts(responsePosts);
     }
@@ -32,13 +35,19 @@ export function Blogs() {
     getPosts();
   }, [selectedBlog]);
 
-  const filterPosts = (labels) => {
+  const filterPosts = (labels, sort) => {
     setFilteredPosts(posts.filter(p => 
       (labels.length == 0 || p.labels.intersection(labels).length > 0)
-    ));
+    ).sort((a, b) => {
+      if (sort == 'Newest first') {
+        return b.published.getTime() - a.published.getTime();
+      }
+      else if (sort == 'Oldest first') {
+        return a.published.getTime() - b.published.getTime();
+      }
+    }));
   };
 
-  //Todo: allow sorting (eg newest to oldest or vice-versa)
   //Todo: allow clicking on images to expand (like with MarkdownPage)
   //Tood: links should open in a new tab
 
@@ -53,9 +62,13 @@ export function Blogs() {
           </div>
         : null}
         <div style={{display: showFilter ? 'flex' : 'none', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'start', alignItems: 'center', padding: isMobile ? 10 : '10px 10px 10px 0px', borderBottom: '2px solid white', marginBottom: 10}}>
-          <Dropdown name='Labels' options={posts.selectAll(p => p.labels).distinct()} setSelectedVals={vals => {
+          <Dropdown name='Order' options={['Newest first', 'Oldest first']} defaultValue='Newest first' setSelected={val => {
+            setSortOrder(val);
+            filterPosts(selectedLabels, val);
+          }}/>
+          <Dropdown name='Labels' isMulti={true} options={posts.selectAll(p => p.labels).distinct()} setSelected={vals => {
             setSelectedLabels(vals);
-            filterPosts(vals);
+            filterPosts(vals, sortOrder);
           }}/>
         </div>
         {/*Todo: figure out how to keep the 'Filter' at the top & only scroll the posts area*/}
@@ -85,10 +98,11 @@ function Dropdown(props) {
       <Select styles={styles}
         placeholder={props.name}
         options={props.options.map(o => {return {value: o, label: o}/*TEMP?*/})}
-        closeMenuOnSelect={false}
+        defaultValue={props.defaultValue ? {value: props.defaultValue, label: props.defaultValue} : null}
+        closeMenuOnSelect={!props.isMulti}
         components={animatedComponents}
-        onChange={vals => props.setSelectedVals(vals.map(val => val.value))}
-        isMulti
+        onChange={selected => props.isMulti ? props.setSelected(selected.map(val => val.value)) : props.setSelected(selected.value)}
+        isMulti={props.isMulti}
         />
     </div>
   );
@@ -105,7 +119,7 @@ function PostCard(props) {
   return (
     <div style={{display: 'flex', flexDirection: 'column', width: 'calc(100% - 60px)', padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
       <h3 style={{marginTop: 0}}>{props.post.title}</h3>
-      <h4 style={{marginTop: 0}}>{new Date(props.post.published).toLocaleDateString()}</h4>
+      <h4 style={{marginTop: 0}}>{props.post.published.toLocaleDateString()}</h4>
       <p style={{overflowWrap: 'anywhere'}} dangerouslySetInnerHTML={{__html: props.post.content}}/>
     </div>
   );
