@@ -84,11 +84,15 @@ export function Blogs() {
 }
 
 function PostCard(props) {
-  //Todo: hyperlink the title to the blog post on the blog
-
   return (
     <div className='blogPost' style={{display: 'flex', flexDirection: 'column', width: 'calc(100% - 60px)', padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888'}}>
-      <h3 style={{marginTop: 0}}>{props.post.title}</h3>
+      <div style={{display: 'flex'}}>
+        <h3 style={{marginTop: 0}}>{props.post.title}</h3>
+        <div style={{flex: '1 0 0'}} />
+        <a style={{marginLeft: 10}} href={props.post.url} target='_blank'>
+          <i style={{height: 25, width: 25, fontSize: '25px', color: 'white'}} className='bi bi-box-arrow-up-right'/>
+        </a>
+      </div>
       <h4 style={{marginTop: 0}}>{props.post.published.toLocaleDateString()}</h4>
       <p style={{overflowWrap: 'anywhere'}} dangerouslySetInnerHTML={{__html: props.post.content}}/>
     </div>
