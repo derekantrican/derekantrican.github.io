@@ -1,10 +1,9 @@
 import * as project_data from '../data/projects.js';
 import '../styles/projects.css';
-import Select from 'react-select';
-import makeAnimated from 'react-select/animated';
 import { useIsMobile } from '../hooks/isMobile';
 import { useState } from 'react';
 import '../utils/arrayHelpers';
+import { Dropdown } from '../components/Dropdown';
 
 export function Projects() {
   const isMobile = useIsMobile();
@@ -22,8 +21,8 @@ export function Projects() {
 
   const filterProjects = (languages, technologies, types) => {
     setProjects(project_data.projects.filter(p => 
-      (languages.length == 0 || languages.intersection(p.languages).length > 0) &&
-      (technologies.length == 0 || technologies.intersection(p.technologies).length > 0) &&
+      (languages.length == 0 || p.languages.intersection(languages).length > 0) &&
+      (technologies.length == 0 || p.technologies.intersection(technologies).length > 0) &&
       (types.length == 0 || types.includes(p.type))
     ));
   };
@@ -39,15 +38,15 @@ export function Projects() {
           </div>
         : null}
         <div style={{display: showFilter ? 'flex' : 'none', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'start', alignItems: 'center', padding: isMobile ? 10 : '10px 10px 10px 0px', borderBottom: '2px solid white', marginBottom: 10}}>
-          <Dropdown name='Languages' options={project_data.languages.map(l => l.name)} setSelectedVals={vals => {
+          <Dropdown name='Languages' isMulti={true} options={project_data.languages.map(l => l.name)} setSelected={vals => {
             setSelectedLanguages(vals);
             filterProjects(vals, selectedTechnologies, selectedTypes);
           }}/>
-          <Dropdown name='Technologies' options={project_data.technologies.map(l => l.name)} setSelectedVals={vals => {
+          <Dropdown name='Technologies' isMulti={true} options={project_data.technologies.map(l => l.name)} setSelected={vals => {
             setSelectedTechnologies(vals);
             filterProjects(selectedLanguages, vals, selectedTypes);
           }}/>
-          <Dropdown name='Type' options={uniqueProjectTypes} setSelectedVals={vals => {
+          <Dropdown name='Type' isMulti={true} options={uniqueProjectTypes} setSelected={vals => {
             setSelectedTypes(vals);
             filterProjects(selectedLanguages, selectedTechnologies, vals);
           }}/>
@@ -64,30 +63,6 @@ export function Projects() {
           )}
         </div>
       </div>
-    </div>
-  );
-}
-
-const animatedComponents = makeAnimated();
-
-function Dropdown(props) {
-  const isMobile = useIsMobile();
-  const styles = {
-    option: (styles) => {
-      return { ...styles, color: 'black'};
-    }
-  };
-
-  return (
-    <div style={{width: isMobile ? '100%' : 300, margin: isMobile ? 10 : '10px 10px 10px 0px'}}>
-      <Select styles={styles}
-        placeholder={props.name}
-        options={props.options.map(o => {return {value: o, label: o}/*TEMP?*/})}
-        closeMenuOnSelect={false}
-        components={animatedComponents}
-        onChange={vals => props.setSelectedVals(vals.map(val => val.value))}
-        isMulti
-        />
     </div>
   );
 }
