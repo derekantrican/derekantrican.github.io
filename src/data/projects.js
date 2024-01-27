@@ -80,7 +80,7 @@ export const projects = [{
   name : "GAS-ICS-Sync",
   description : "A script for syncing ics/ical calendars to Google Calendar faster than the 12 hour cadence provided natively by Google Calendar",
   users : "1,200 stars on GitHub, probably 5-10x that many users",
-  icon : "https://derekantrican.com/images/gas-ics-sync.png",
+  icon : "https://derekantrican.com/images/projects/gas-ics-sync.png",
   github : "https://github.com/derekantrican/GAS-ICS-Sync",
   type: 'Script',
   languages : [
@@ -93,7 +93,7 @@ export const projects = [{
 {
   name : "MountainProjectBot",
   description : "An HTML scraper and reddit bot to link MountainProject.com and various climbing subreddits, replying automatically to posts with climbing information",
-  icon : "https://derekantrican.com/images/reddit_bot.png",
+  icon : "https://derekantrican.com/images/projects/reddit_bot.png",
   github : "https://github.com/derekantrican/MountainProject",
   type: 'Bot',
   languages : [
