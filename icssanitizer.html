@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="derekantrican">
+    <meta name="description" content="ICAL Sanitizer">
+    <meta name="keywords" content="ical,sanitizer,obfuscate">
+    <link rel="stylesheet" href="ICSSanitizer\style.css" type="text/css">
+    <script src="ICSSanitizer\jquery.js"></script>
+    <script src="ICSSanitizer\ical.min.js"></script>
+    <script src="ICSSanitizer\main.js"></script>
+    <script src="ICSSanitizer\md5.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        ICS/ICAL Sanitizer
+      </div>
+      <div class="urlRow">
+        <label>ICS/ICAL url: </label>
+        <input type='text' id="link" placeholder="Type ICS URL here (ex. https://p24-calendars.icloud.com/holidays/us_en.ics)"><br>
+      </div>
+      <div class="options">
+        <fieldset>
+          <legend>Sanitize options</legend>
+          <table>
+            <tr>
+              <td>Calendar name:</td>
+              <td><input type="radio" name="calName" value="none" checked>None</td>
+              <td><input type="radio" name="calName" value="scramble">Scramble</td>
+              <td><input type="radio" name="calName" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Calendar description:</td>
+              <td><input type="radio" name="calDesc" value="none" checked>None</td>
+              <td><input type="radio" name="calDesc" value="scramble">Scramble</td>
+              <td><input type="radio" name="calDesc" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Calendar prodid:</td>
+              <td><input type="radio" name="calProdid" value="none" checked>None</td>
+              <td><input type="radio" name="calProdid" value="scramble">Scramble</td>
+              <td><input type="radio" name="calProdid" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Event titles:</td>
+              <td><input type="radio" name="eventTitle" value="none" checked>None</td>
+              <td><input type="radio" name="eventTitle" value="scramble">Scramble</td>
+              <td><input type="radio" name="eventTitle" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Event descriptions:</td>
+              <td><input type="radio" name="eventDesc" value="none" checked>None</td>
+              <td><input type="radio" name="eventDesc" value="scramble">Scramble</td>
+              <td><input type="radio" name="eventDesc" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Event locations:</td>
+              <td><input type="radio" name="eventLoc" value="none" checked>None</td>
+              <td><input type="radio" name="eventLoc" value="scramble">Scramble</td>
+              <td><input type="radio" name="eventLoc" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Event ids:</td>
+              <td><input type="radio" name="eventUid" value="none" checked>None</td>
+              <td><input type="radio" name="eventUid" value="scramble">Scramble</td>
+              <td><input type="radio" name="eventUid" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Event organizer(s):</td>
+              <td><input type="radio" name="eventOrganizer" value="none" checked>None</td>
+              <td><input type="radio" name="eventOrganizer" value="scramble">Scramble</td>
+              <td><input type="radio" name="eventOrganizer" value="remove">Remove</td>
+            </tr>
+            <tr>
+              <td>Event attendee(s):</td>
+              <td><input type="radio" name="eventAttendee" value="none" checked>None</td>
+              <td><input type="radio" name="eventAttendee" value="scramble">Scramble</td>
+              <td><input type="radio" name="eventAttendee" value="remove">Remove</td>
+            </tr>
+          </table>
+        </fieldset>
+      </div>
+      <div class="buttonRow">
+        <button id="btn">Update</button>
+        <span class="tip">Tip: Save to <a href="https://pastebin.com/" target="_blank">pastebin</a> for easier sharing</span>
+      </div>
+      <div class="content">
+        <textarea id="textArea" readonly></textarea>
+      </div>
+    </div>
+  </body>
+</html>
