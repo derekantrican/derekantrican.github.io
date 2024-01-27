@@ -14,9 +14,7 @@ function App() {
       <ScrollToTop/>
       <Routes>
         <Route path='/' element={
-          <Layout title='Home'>
-            <Home/>
-          </Layout>
+          <Home/>
         }/>
         <Route path='/about' element={
           <Layout title='About'>

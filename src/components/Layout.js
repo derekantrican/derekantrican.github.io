@@ -1,4 +1,4 @@
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "./NavBar";
 import { useIsMobile } from "../hooks/isMobile";
 import { useEffect, useState, React } from "react";
 import { useLocation } from "react-router-dom";
