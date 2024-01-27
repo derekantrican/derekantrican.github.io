@@ -6,6 +6,7 @@ export function Sidebar(props) {
   const isMobile = useIsMobile();
 
   //Todo: fix the issue of double scrollbars when the height is too small for the sidebar
+  //Todo: on small screens (eg I reproduced on the /blogs page with the iPhone SE dimensions) the sidepanel can have a background discrepency: https://i.imgur.com/5PyYoDr.png
 
   return (
     <div className={isMobile ? props.isOpen ? "sidebar open" : "sidebar" : ""} style={isMobile ? {width: '100%'} : {width: 400, borderWidth: '0px 2px 0px 0px', borderStyle: 'solid'}}>
