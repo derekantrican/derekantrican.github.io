@@ -2,55 +2,20 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Layout } from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
-import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife, Projects } from './pages';
-
-//Todo: I can also use this site for "hidden" pages (like Turkish Resources, etc)
-//Todo: maybe I can have a central list of these pages somewhere that can be referenced here (like `pages.map(p => <Route ...)`)
-//   and in Sidebar
+import { pages } from './data/pages';
+import './utils/arrayHelpers';
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop/>
       <Routes>
-        <Route path='/' element={
-          <Home/>
-        }/>
-        <Route path='/about' element={
-          <Layout title='About'>
-            <About/>
-          </Layout>
-        }/>
-        <Route path='/about/professionallife' element={
-          <Layout title='Professional life'>
-            <ProfessionalLife/>
-          </Layout>
-        }/>
-        <Route path='/about/hobbies' element={
-          <Layout title='Hobbies'>
-            <Hobbies/>
-          </Layout>
-        }/>
-        <Route path='/calendar' element={
-          <Layout title='Calendar'>
-            <Calendar/>
-          </Layout>
-        }/>
-        <Route path='/projects' element={
-          <Layout title='Projects'>
-            <Projects/>
-          </Layout>
-        }/>
-        <Route path='/blogs' element={
-          <Layout title='Blogs'>
-            <Blogs/>
-          </Layout>
-        }/>
+        {pages.concat(pages.selectAll(p => p.subpages ?? [])).map(page =>
+          <Route key={page.title} path={page.path} element={
+            page.wrapWithLayout ? <Layout title={page.title}>{page.element}</Layout> : page.element
+          }/>
+        )}
         {/*Todo: have unlisted pages like turkish resources, halal tips, etc*/}
-        <Route path='/dev' element={
-          <></>
-          //Todo: have a login page (with TOTP) that will open up some admin options on the website
-        }/>
         {/*Todo: could have a whole "Turkiye worker" section for newsletters, etc that is login-protected*/}
       </Routes>
     </BrowserRouter>
