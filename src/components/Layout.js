@@ -20,7 +20,7 @@ export function Layout(props) {
         <h2>{props.title}</h2>{/*Todo: should reflect the active page name*/}
       </div>
       <Sidebar isOpen={isSidepanelOpen} togglePanel={() => setIsSidePanelOpen(!isSidepanelOpen)}/>
-      <div style={isSidepanelOpen ? {overflow: 'hidden', height: '100%'} : {}/*Limit scroll to sidepanel only when sidepanel is open*/}>
+      <div style={isSidepanelOpen ? {overflow: 'hidden', height: '100%'} : {height: 'calc(100% - 50px)'}/*Limit scroll to sidepanel only when sidepanel is open*/}>
         {props.children}
       </div>
     </div>

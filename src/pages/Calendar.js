@@ -60,7 +60,7 @@ export function Calendar() {
   };
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', height: '100%', width: 'calc(100% - 20px)', margin: '0px 10px'}}>
+    <div style={{display: 'flex', flexDirection: 'column', height: 'calc(100% - 20px)', width: 'calc(100% - 20px)', margin: '0px 10px'}}>
       <div style={{display: 'flex', flexWrap: 'wrap', alignItems: 'center'}}>
         <strong>Key: </strong>
         {/*Todo: rather than using imgur links, I could use the calendar map above and make the squares directly*/}
