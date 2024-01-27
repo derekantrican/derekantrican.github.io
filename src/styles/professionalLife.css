@@ -1,0 +1,11 @@
+.professionalLife p {
+  font-size: 1.3rem;
+}
+
+.professionalLife li {
+  font-size: 1.3rem;
+}
+
+.professionalLife p:has(img) {
+  text-align: center;
+}

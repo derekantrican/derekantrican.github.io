@@ -1,0 +1,30 @@
+html, 
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+.navlink:hover {
+  background-color: gray;
+}
+
+.slideLeft {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-out;
+}
+
+.appearWithDelay {
+  animation: 500ms appear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
