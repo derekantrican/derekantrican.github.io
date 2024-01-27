@@ -1,0 +1,58 @@
+:root {
+    color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header, .urlRow, .options, .buttonRow, .content {
+    padding: 5px;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.header {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.urlRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.urlRow > input {
+    margin: 0 5px;
+    flex: 1;
+}
+
+.tip {
+    padding: 10px;
+}
+
+.content {
+    flex: 1;
+}
+
+.content > textarea {
+    height: 100%;
+    width: 100%;
+    resize: none;
+}
