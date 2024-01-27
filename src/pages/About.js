@@ -1,6 +1,7 @@
 import '../styles/about.css'
 import { useIsMobile } from '../hooks/isMobile';
 import { MarkdownPage } from '../components/MarkdownPage';
+import { baseUrl } from '../utils/utils';
 
 export function About() {
   const isMobile = useIsMobile();
@@ -12,7 +13,7 @@ export function About() {
 
   I currently work as a Software Engineer for Microsoft on the Office Engineering team, creating tools to support those who work on Office products.
 
-  I also like the outdoors: rock climbing, camping, hiking ([PCT 2015|_blank](http://pct.derekantrican.com)), etc!
+  I also like the outdoors: rock climbing, camping, hiking ([PCT 2015](${baseUrl()}/blogs)), etc!
 
   ## Personality
 

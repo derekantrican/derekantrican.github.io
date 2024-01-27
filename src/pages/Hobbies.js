@@ -32,7 +32,7 @@ export function Hobbies() {
   ## Outdoors
   My other main hobby is being outdoors! I like hiking, camping, rock climbing, kayaking, and more! One of my biggest accomplishments
   is through-hiking the 2500-mile Pacific Crest Trail (which stretches from Mexico to Canada) in the summer of 2015. This took
-  me about 5 months and you can read more about my experience [here](${baseUrl()/*Todo: update this url once the blogs page is up*/}/blogs/pct).
+  me about 5 months and you can read more about my experience [here](${baseUrl()/*Todo: update this url once the blogs page is up*/}/blogs).
 
   Additionally, I love taking my friends camping! I try to go camping often every year - whether it's at a drive-in campsite or
   miles into the wilderness on a backpacking trail.
