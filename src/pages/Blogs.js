@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/isMobile";
 import '../utils/arrayHelpers';
 import { Dropdown } from '../components/Dropdown';
+import { baseUrl } from '../utils/utils';
 
 export function Blogs() {
   const isMobile = useIsMobile();
@@ -21,7 +22,7 @@ export function Blogs() {
       setPosts([]);
       setFilteredPosts([]);
 
-      const response = await fetch(`http://localhost:3000/blogs/${selectedBlog}.json`);
+      const response = await fetch(`${baseUrl()}/blogs/${selectedBlog}.json`);
       // console.log(await response.json());
 
       var responsePosts = await response.json();
