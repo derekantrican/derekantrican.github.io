@@ -28,7 +28,7 @@ export function Projects() {
   };
 
   return (
-    <div className='projects' style={{height: '100%', width: '100%'}}>
+    <div className='projects' style={{height: '100%', width: '100%', overflowY: 'auto'}}>
       <div style={{padding: isMobile ? 20 : '20px 10%'}}>
         {isMobile ? 
           <div style={{display: 'flex', alignItems: 'center', marginLeft: 10,  borderBottom: '2px solid white'}} onClick={() => setShowFilter(!showFilter)}>
@@ -57,7 +57,7 @@ export function Projects() {
           </label>
         </div>
         {/*Todo: figure out how to keep the 'Filter' at the top & only scroll the projects area*/}
-        <div style={{display: 'flex', flexFlow: 'wrap', overflowY: 'auto'}}>
+        <div style={{display: 'flex', flexFlow: 'wrap'}}>
           {projects.map(project =>
             <ProjectCard key={project.name} project={project} showDetails={showProjectDetails}/>
           )}
