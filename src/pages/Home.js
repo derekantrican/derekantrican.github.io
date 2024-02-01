@@ -6,7 +6,7 @@ export function Home() {
   const isMobile = useIsMobile();
 
   return (
-    <div style={{height: '100%', width: '100%'}}>
+    <div style={{height: '100%', width: '100%', overflow: 'hidden' /*There's some weird 5x scroll due to the video element. This hides it.*/}}>
       <video style={{height: '100%', width: '100%', objectFit: 'cover'}} autoPlay={true} loop={true} muted={true} playsInline={true}>
         <source src={`${baseUrl()}/forest_1080p.mp4`}/>
       </video>
