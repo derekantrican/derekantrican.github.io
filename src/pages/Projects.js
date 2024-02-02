@@ -61,6 +61,11 @@ export function Projects() {
           {projects.map(project =>
             <ProjectCard key={project.name} project={project} showDetails={showProjectDetails}/>
           )}
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: isMobile ? '100%' : 300, padding: 20, margin: 10, borderRadius: 15, backgroundColor: '#888888', cursor: 'pointer'}}
+            onClick={() => window.open('https://github.com/derekantrican', '_blank')}>
+            <i style={{height: 120, width: 120, fontSize: '100px', color: 'white', textAlign: 'center'}} className='bi bi-github'/>
+            <h2>And more...</h2>
+          </div>
         </div>
       </div>
     </div>
