@@ -12,6 +12,10 @@
   margin-top: 40px;
 }
 
+.turkishResources table h1 {
+  margin: 15px;
+}
+
 .turkishResources .borders,
 .turkishResources .borders th,
 .turkishResources .borders td {
