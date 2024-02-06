@@ -1,4 +1,5 @@
 import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife, Projects } from "../pages";
+import { HalalTips } from "../pages/HalalTips";
 
 export const pages = [{
   title : 'Home',
@@ -41,6 +42,13 @@ export const pages = [{
   path : '/blogs',
   element : <Blogs/>,
   wrapWithLayout : true,
+},
+{
+  title : 'Halal tips',
+  path : '/halal',
+  element: <HalalTips/>,
+  wrapWithLayout : true,
+  unlisted : true,
 },
 {
   title: 'Dev',

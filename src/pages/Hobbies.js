@@ -59,7 +59,7 @@ export function Hobbies() {
   // - Cooking?
 
   return (
-    <div className='hobbies' style={{height: '100%', overflowY: 'auto', padding: '20px 10%'}}>
+    <div className='hobbies' style={{height: 'calc(100% - 40px)', overflowY: 'auto', padding: '20px 10%'}}>
       <MarkdownPage content={content} imageStyles={{margin: 10, objectFit: 'cover'}}/>
     </div>
   );

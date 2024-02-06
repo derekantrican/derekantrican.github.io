@@ -23,7 +23,7 @@ export function About() {
   `;
 
   return (
-    <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', width: isMobile ? '100%' : '75%'}}>
+    <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', width: isMobile ? '100%' : '75%', overflowY: 'auto', height: '100%'}}>
       <img style={{width: isMobile ? '90%' : '45%', height: 'auto', objectFit: 'cover', marginTop: 20, borderRadius: 20 }} src='images/profile_med.jpg'/>
       <div className='about' style={{margin: '0px 35px'}}>
         <MarkdownPage content={content}/>
