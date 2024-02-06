@@ -1,7 +1,3 @@
-.halalTips p {
-  font-size: 1.3rem;
-}
-
-.halalTips li {
+.halalTips p, .halalTips li {
   font-size: 1.3rem;
 }

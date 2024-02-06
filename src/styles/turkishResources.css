@@ -1,0 +1,28 @@
+.turkishResources p,
+.turkishResources li,
+.turkishResources td {
+  font-size: 1.3rem;
+}
+
+.turkishResources h1 {
+  margin-top: 60px;
+}
+
+.turkishResources h2 {
+  margin-top: 40px;
+}
+
+.turkishResources .borders,
+.turkishResources .borders th,
+.turkishResources .borders td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+.turkishResources td {
+  padding: 10px;
+}
+
+.turkishResources li {
+  margin-top: 20px;
+}

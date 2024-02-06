@@ -1,10 +1,7 @@
 import '../styles/halalTips.css';
-import { useIsMobile } from '../hooks/isMobile';
 import { MarkdownPage } from '../components/MarkdownPage';
 
 export function HalalTips() {
-  const isMobile = useIsMobile();
-
   const content = `
   # Tips on making a dish Halal
 
