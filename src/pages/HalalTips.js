@@ -7,7 +7,7 @@ export function HalalTips() {
 
   If you are making a dish to bring to a Muslim's house or a potluck with Muslims, you should make it Halal so that they can freely enjoy it!
 
-  This site is a great overview of what constitutes Halal, the purpose behind it, etc: https://www.icv.org.au/about/about-islam-overview/what-is-halal-a-guide-for-non-muslims 
+  This site is a great overview of what constitutes Halal, the purpose behind it, etc: [What is halal|_blank](https://www.foodnetwork.com/how-to/packages/food-network-essentials/what-is-halal)
 
   Here are some quick tips:
   - Avoid any pork or pig products (eg ham, bacon fat, etc)
