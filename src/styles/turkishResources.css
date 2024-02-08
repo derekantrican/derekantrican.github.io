@@ -30,3 +30,8 @@
 .turkishResources li {
   margin-top: 20px;
 }
+
+#conversationCard p {
+  margin-bottom: 30px;
+  line-height: 2.2rem;
+}

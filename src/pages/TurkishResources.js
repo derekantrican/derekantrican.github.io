@@ -1,4 +1,5 @@
 import '../styles/turkishResources.css';
+import { baseUrl } from "../utils/utils";
 
 export function TurkishResources() {
   return (
@@ -129,6 +130,34 @@ export function TurkishResources() {
         Cognates are words where the word is similar (or the same) in Turkish as in English. Turkish has a LOT of cognates (in fact, there are lists of over 3000 online)!
         Here are just a few examples (can you guess what they mean?): kedi, ceket, brokoli, avokado, basketbol, helikopter, telefon, vanilya, çikolata, porsiyon, orijinal.
       </p>
+      <h2>An example conversation</h2>
+      <p>Here's an example Turkish conversation you can have with a friend!</p>
+      <div id='conversationCard' style={{border: '1px solid white', padding: '0px 20px', maxWidth: 1000, margin: 'auto'}}>
+        <p>
+          <strong>Person 1:</strong> Merhaba!<br/>
+          <i>(“Merh-ah-bah!” - Hello!)</i>
+        </p>
+        <p style={{textAlign: 'right'}}>
+          <strong>Person 2:</strong> Merhaba! Nasılsın?<br/>
+          <i>(“Merh-ah-bah! Nas-ul-suhn?” -<br/>Hello! How are you?)</i>
+        </p>
+        <p>
+          <strong>Person 1:</strong> İyiyim! Sen nasılsın?<br/>
+          <i>(“Ee-yee-yim! Sen nas-ul-suhn?” -<br/>I am good! How are you?)</i>
+        </p>
+        <p style={{textAlign: 'right'}}>
+          <strong>Person 2:</strong> Ben de iyiyim. Ben [your name]. Adin ne?<br/>
+          <i>(“Ben day ee-yee-yim. Ben [your name]. Ad-in nay?” -<br/>I am also good. I am [your name]. What is your name?)</i>
+        </p>
+        <p>
+          <strong>Person 1:</strong> Benim adim [your name]. Memnum oldum!<br/>
+          <i>(“Ben-im ad-im [your name]. Maym-nuum old-um” -<br/>My name is [your name]. Nice to meet you!)</i>
+        </p>
+        <p style={{textAlign: 'right'}}>
+          <strong>Person 2:</strong> Ben de memnum oldum!<br/>
+          <i>(“Ben day maym-nuum old-um!” -<br/>Nice to meet you too!)</i>
+        </p>
+      </div>
       <h1>Tips for going to a Turkish house</h1>
       <p>
         Turks are very hospitable people! They value personal relationships very highly and are almost always open to hanging out. If you get invited to a dinner at their
@@ -174,9 +203,49 @@ export function TurkishResources() {
         <i><strong>Pro tip:</strong> Say “Ellerine Sağlık” (Eh-ler-ih-nay Sah-luk) as “Bless your Hands” (when speaking to the cook) and “Afiyet Olsun” (Ah-fee-yet Ol-suhn) as “Bon Appetit”.</i>
       </p>
       <p style={{marginTop: 35}}>
-        At the end of your enjoyable time, invite them over to your place (you don’t have to have a date immediately) and make them one of your favorite American dishes
+        At the end of your enjoyable time, invite them over to your place (you don't have to have a date immediately) and make them one of your favorite American dishes
         (Halal, of course)!
       </p>
+      <h1>Shared beliefs between Islam and Christianity</h1>
+      <p>
+        In some ways, Islam and Christianity are very similar. There are definitely significant differences, but here are a few similarities that might help find some common
+        ground and prompt conversation:
+      </p>
+      <ul>
+        <li>
+          <strong>The prophets and similar stories</strong><br/>
+          Most of the major characters you may know of from the Bible (Adam, Noah, Abraham, Isaac, Jacob, Job, David, Solomon, John the Baptist, etc) are revered as prophets
+          in Islam. Many of the major stories (Noah's ark, plagues of Egypt, Abraham's sacrifice, etc) are very similar.
+        </li>
+        <li>
+          <strong>One God - the Abrahamic God</strong><br/>
+          Islam is monotheistic and Muslims believe in the Abrahamic God - the same as Christianity. However, Muslim's view of God (Allah) is more akin to Christian's view
+          of God the Father. To Christians, “God” refers more to the common “essence” exhibited in three persons (the Father, Son, & the Holy Spirit).
+        </li>
+        <li>
+          <strong>Jesus was born miraculously, performed miracles, and was the promised Messiah. He was sinless.</strong><br/>
+          Both religions believe Jesus was a very significant figure and both believe that he was the promised Messiah, Word of God, that he was born miraculously and performed
+          miracles. Both believe that he was sinless (though Muslims believe that all the prophets were sinless). Even more so, both religions believe that Jesus is the Messiah
+          that will one day return again.
+        </li>
+        <li>
+          <strong>Jesus will return from Heaven to defeat the Antichrist</strong><br/>
+          Both religions believe that one day there will be an Antichrist that will appear during a period of great tribulation, will claim to be God, and will deceive many to
+          follow him. Both religions also believe that Jesus will come back from Heaven and defeat the Antichrist.
+        </li>
+        <li>
+          <strong>Judgement Day, Heaven, Satan, & Hell</strong><br/>
+          Christians and Muslims both have a common understanding of Judgement Day, Satan, Heaven, and Hell. There are, of course, some differences (especially in Judgement Day
+          and how a person “qualifies” for Heaven) but, in general, they are similar.
+        </li>
+        <li>
+          <strong>Both revere the Bible as a holy book</strong><br/>
+          The Bible is regarded highly in both religions and treated with respect. Muslims even recognize much of the content of the Bible as true - as long as it is translated
+          correctly and does not contradict the Quran. (Some Muslims will say that the Bible is corrupt due to mistranslation from the original texts)
+        </li>
+      </ul>
+      <h1>Tips on making (almost) any dish Halal</h1>
+      <p>To see tips on making food halal, go <a href={`${baseUrl()}/halal`}>here</a></p>
     </div>
   );
 }
