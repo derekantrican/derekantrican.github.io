@@ -10,7 +10,8 @@ export function Layout(props) {
   const location = useLocation();
 
   useEffect(() => {
-    setIsSidePanelOpen(false)
+    document.title = `Derek Antrican - ${props.title}`;
+    setIsSidePanelOpen(false);
   }, [location]);
 
   return isMobile ? (

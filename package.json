@@ -10,6 +10,7 @@
     "bootstrap-icons": "^1.11.1",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
+    "react-document-meta": "^3.0.0-beta.2",
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "react-medium-image-zoom": "^5.1.10",
