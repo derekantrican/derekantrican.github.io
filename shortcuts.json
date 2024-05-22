@@ -15,10 +15,7 @@
         "icon": "http://i.imgur.com/iBhatZv.png",
         "url": "https://trello.com"
     },
-    {
-        "icon": "http://i.imgur.com/T8zQc3Q.png",
-        "url": "https://app.simplenote.com/"
-    },
+    null,
     {
         "icon": "https://cdn.iconscout.com/icon/free/png-512/discord-3-569463.png",
         "url": "https://discord.com/app"
@@ -36,10 +33,7 @@
         "icon": "http://i.imgur.com/vjBAY0Y.png",
         "url": "http://getpocket.com"
     },
-    {
-        "icon": "http://i.imgur.com/xMgzcK2.png",
-        "url": "http://hulu.com"
-    },
+    null,
     {
         "icon": "https://www.benlcollins.com/wp-content/uploads/2016/01/spotify.png",
         "url": "https://open.spotify.com"
@@ -60,10 +54,7 @@
         "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png",
         "url": "https://ms.portal.azure.com"
     },
-    {
-        "icon": "http://i.imgur.com/Rkje5gQ.png",
-        "url": "http://login.teamviewer.com"
-    },
+    null,
     {
         "icon": "https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png",
         "url": "http://server.derekantrican.com/sonarr"
@@ -100,7 +91,10 @@
         "icon": "https://i.imgur.com/AiUsmAS.png",
         "url": "https://www.chase.com/personal/credit-cards/amazon/view-account"
     },
-    null,
+    {
+        "icon": "https://www.fidelity.com/bin-public/060_www_fidelity_com/images/Fidelity_Rewards_VisaSignature_trans.png",
+        "url": "https://login.fidelityrewards.com/onlineCard"
+    },
     {
         "icon": "https://i.imgur.com/3cNwvEm.png",
         "url": "https://docs.google.com/spreadsheets/d/1rlZhUzeei_hqxPG-JXDJ6vg1A-bFVl9K7Z0xTWxY42w/edit#gid=2087645350"
