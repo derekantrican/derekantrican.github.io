@@ -1,6 +1,7 @@
 import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife, Projects } from "../pages";
 import { HalalTips } from "../pages/HalalTips";
 import { TurkishResources } from "../pages/TurkishResources";
+import { WorkingFromTurkiye } from "../pages/WorkingFromTurkiye";
 
 export const pages = [{
   title : 'Home',
@@ -113,6 +114,13 @@ export const pages = [{
   path : '/turkish',
   element : <TurkishResources/>,
   wrapWithLayout : true,
+  unlisted : true,
+},
+{
+  title : 'Working from Turkiye',
+  path : '/workingFromTurkiye',
+  element : <WorkingFromTurkiye/>,
+  wrapWithLayout : false,
   unlisted : true,
 },
 {
