@@ -35,7 +35,9 @@ export function WorkingFromTurkiye() {
   - **Velocity project demo/launch:** will watch the recording the next day (unless, by chance, I am presenting something - then I will stay up late to attend)
   - **Lunch and weekly wind down:** may attend for a bit (with a hard stop at noon)
   - **Engineering Service Review:** attend if presenting
+  `;
 
+  const contactContent = `
   ## Communication
 
   Finally, feel free to ping me in my "off hours". I'll have Teams & Outlook installed on my phone and if you have an urgent question,
@@ -44,9 +46,16 @@ export function WorkingFromTurkiye() {
   *Click on one of the icons below to contact me on that platform*
   `;
 
+  const socialContent = `
+  ## Social
+
+  And if you'd like to see what I'm up to, you can follow me on Instagram
+  `;
+
   return (
     <div style={{height: 'calc(100% - 40px)', overflowY: 'auto', padding: '20px 10%'}}>
       <MarkdownPage content={content} imageStyles={{margin: 10, objectFit: 'cover'}}/>
+      <MarkdownPage content={contactContent} imageStyles={{margin: 10, objectFit: 'cover'}}/>
       <div>
         <a href="sip:deantric@microsoft.com">
           <img style={{width: isMobile ? '20%' : '10%', margin: 10}} src="https://cdn0.iconfinder.com/data/icons/logos-microsoft-office-365/128/Microsoft_Office-10-512.png"/>
@@ -55,6 +64,10 @@ export function WorkingFromTurkiye() {
           <img style={{width: isMobile ? '20%' : '10%', margin: 10}} src="https://cdn.jim-nielsen.com/macos/512/microsoft-outlook-2022-08-02.png"/>
         </a>
       </div>
+      <MarkdownPage content={socialContent} imageStyles={{margin: 10, objectFit: 'cover'}}/>
+      <a href="https://www.instagram.com/dantesupertramp">
+        <img style={{width: isMobile ? '20%' : '10%', margin: 10}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"/>
+      </a>
     </div>
   );
 }
