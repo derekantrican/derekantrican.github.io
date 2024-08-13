@@ -1,7 +1,6 @@
 import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife, Projects } from "../pages";
 import { HalalTips } from "../pages/HalalTips";
 import { TurkishResources } from "../pages/TurkishResources";
-import { WorkingFromTurkiye } from "../pages/WorkingFromTurkiye";
 
 export const pages = [{
   title : 'Home',
