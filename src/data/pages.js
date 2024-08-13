@@ -117,13 +117,6 @@ export const pages = [{
   unlisted : true,
 },
 {
-  title : 'Working from Turkiye',
-  path : '/workingFromTurkiye',
-  element : <WorkingFromTurkiye/>,
-  wrapWithLayout : false,
-  unlisted : true,
-},
-{
   title: 'Dev',
   path : '/dev',
   element: <></>, //Todo: have a login page (with TOTP) that will open up some admin options on the website
