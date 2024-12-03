@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/isMobile";
+import Zoom from 'react-medium-image-zoom';
 
 export function Giveaway() {
   const [items, setItems] = useState([]);
@@ -67,7 +68,9 @@ const Item = (props) => {
 
   return (
     <div style={{width: 300, height: 450, display: 'flex', flexDirection: 'column', padding: 10, margin: isMobile ? '5px auto' : 10, border: '1px solid white', borderRadius: 20}}>
-      <img style ={{height: 350, width: '100%', marginBottom: 10, objectFit: 'contain'}} src={props.url}/>
+      <Zoom classDialog="zoom-modal" zoomMargin={isMobile ? 10 : 45}>
+        <img style ={{height: 350, width: '100%', marginBottom: 10, objectFit: 'contain'}} src={props.url}/>
+      </Zoom>
       {props.description ? <div style={{margin: 'auto 10px 10px 10px'}}>{props.description}</div> : null}
       <button style={{height: 30, backgroundColor: 'dodgerblue', borderRadius: 10, margin: 'auto 5px 5px 5px'}}
         disabled={itemPicked}
