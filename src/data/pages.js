@@ -1,4 +1,5 @@
 import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife, Projects } from "../pages";
+import { Giveaway } from "../pages/Giveaway";
 import { HalalTips } from "../pages/HalalTips";
 import { TurkishResources } from "../pages/TurkishResources";
 
@@ -114,6 +115,13 @@ export const pages = [{
   element : <TurkishResources/>,
   wrapWithLayout : true,
   unlisted : true,
+},
+{
+  title : 'Giveaway',
+  path : '/giveaway',
+  element: <Giveaway/>,
+  wrapWithLayout: false,
+  unlisted: true,
 },
 {
   title: 'Dev',
