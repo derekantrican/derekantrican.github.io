@@ -25,13 +25,15 @@ export function Giveaway() {
   const requestItem = async (item) => {
     if (!contact) {
       alert('Please put some contact info in the box at the top');
-      return;
+      return false;
     }
 
     console.log(`${contact} requested ${item}`);
     await fetch('https://script.google.com/macros/s/AKfycbzSbnYebCUPam1CkMgkD65LzTF_EQIbxFAGBeSZpqS4Shg36m8/exec?' +
       `subjectonly=${encodeURIComponent('A giveaway item has been requested')}&` +
       `messageonly=${encodeURIComponent(`${contact} has requested ${item}`)}`);
+
+    return true;
   }
 
   return (
@@ -69,9 +71,11 @@ const Item = (props) => {
       {props.description ? <div style={{margin: 'auto 10px 10px 10px'}}>{props.description}</div> : null}
       <button style={{height: 30, backgroundColor: 'dodgerblue', borderRadius: 10, margin: 'auto 5px 5px 5px'}}
         disabled={itemPicked}
-        onClick={() => {
-          props.requestItem(props.url);
-          setItemPicked(true);
+        onClick={async () => {
+          const result = await props.requestItem(props.url);
+          if (result) {
+            setItemPicked(true);
+          }
         }}>
         {itemPicked ? 'Requested' : 'Request'}
       </button>
