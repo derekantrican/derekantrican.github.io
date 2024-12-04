@@ -45,13 +45,8 @@ export function Hobbies() {
   My wife and I have a big passion for Turkish culture! We really like the food, the country, and are working on learning the Turkish
   language (_bize şans dile!_). We have a lot of Turkish friends, both here in the Seattle area (a community over 1000, with around
   100 that we know by name) and in Türkiye. We see them often and do all kinds of things together (going to each others' houses
-  for dinner, attending various cultural events such as iftar dinners, playing volleyball, and teaching them about American
+  for dinner, attending various cultural events, playing volleyball, and teaching them about American
   traditions like decorating a Christmas tree or carving pumpkins).
-
-  At our church, we have held large interfaith events where Christians & Muslims get together to share a meal and celebrate a holiday.
-  For instance, every year we hold a Thanksgiving event for both Turks (who are Muslim) and Christians got together for a halal
-  potluck, entertainment, prayer, and insightful thoughts shared from each side. Over 200 people came and it is always a great evening
-  for all!
   `;
 
   //Other hobbies I could list:
