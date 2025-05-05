@@ -57,15 +57,15 @@
     null,
     {
         "icon": "https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png",
-        "url": "http://server.derekantrican.com/sonarr"
+        "url": "http://deskpi.derekantrican.com/sonarr"
     },
     {
         "icon": "https://styles.redditmedia.com/t5_3icg7/styles/communityIcon_d0kaqkdtx9261.png",
-        "url": "http://server.derekantrican.com/radarr"
+        "url": "http://deskpi.derekantrican.com/radarr"
     },
     {
         "icon": "https://images.opencollective.com/readarr/2f7d366/logo/256.png",
-        "url": "http://server.derekantrican.com/readarr"
+        "url": "http://deskpi.derekantrican.com/readarr"
     },
     {
         "icon": "https://dashboard.snapcraft.io/site_media/appmedia/2022/02/icon_gByPU8F.png",
