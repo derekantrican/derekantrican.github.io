@@ -3,17 +3,17 @@
 export const languages = [{
   name : "C#",
   link : "https://docs.microsoft.com/en-us/dotnet/csharp/",
-  icon : "https://static-00.iconduck.com/assets.00/c-sharp-c-icon-1822x2048-wuf3ijab.png",
+  icon : "https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg",
 },
 {
   name : "Python",
-  link : "",
-  icon : "",
+  link : "https://www.python.org",
+  icon : "https://images.icon-icons.com/112/PNG/512/python_18894.png",
 },
 {
   name : "Javascript",
   link : "https://www.javascript.com/",
-  icon : "https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png",
+  icon : "https://img.icons8.com/color/512/javascript.png",
 },
 {
   name : "XAML",
@@ -34,12 +34,22 @@ export const technologies = [{
 {
   name : "Google Apps Script",
   link : "https://developers.google.com/apps-script",
-  icon : "https://derekantrican.com/images/googleappsscript.png",
+  icon : "https://static.wikia.nocookie.net/logopedia/images/0/0b/Google_Apps_Script_2013.png",
 },
 {
   name : "React",
   link : "https://react.dev/",
   icon : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+},
+{
+  name : "Node.js",
+  link : "https://nodejs.org",
+  icon : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6bebC_d4eWwJ-x9ntqDuT94TvOgumSBVWHg&s",
+},
+{
+  name : "AWS",
+  link : "https://aws.amazon.com",
+  icon : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/1200px-AWS_Simple_Icons_AWS_Cloud.svg.png",
 }];
 
 //Other projects I could list:
@@ -116,5 +126,33 @@ export const projects = [{
   ],
   technologies : [
     "React",
+  ],
+},
+{
+  name : "YouTubarr",
+  description : 'A full-stack app using Node.js, express.js, & React to poll for YouTube videos (via RSS feeds) and take action (alert, download, etc)',
+  icon: 'https://private-user-images.githubusercontent.com/1558019/465681656-dd9b42d8-08e9-4d9a-a175-acf7219d059a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI4NjEzNDEsIm5iZiI6MTc1Mjg2MTA0MSwicGF0aCI6Ii8xNTU4MDE5LzQ2NTY4MTY1Ni1kZDliNDJkOC0wOGU5LTRkOWEtYTE3NS1hY2Y3MjE5ZDA1OWEucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDcxOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA3MThUMTc1MDQxWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MWYwZWVhYmUyOTljOGU5NjE5NDRmYTNjZmY2ZTAwMzYzNTA3NGFiZmJhYzQ1MjA2MzAzYTc0MDFkOGRkNjUzNiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.ier7_Qaw3RMrRJNZLGW4ei9bVrdgWAlq_DnWCqljGGk',
+  github: 'https://github.com/derekantrican/youtubarr',
+  type: 'Website',
+  languages: [
+    'Javascript',
+  ],
+  technologies: [
+    'Node.js',
+    'React',
+  ],
+},
+{
+  name: 'YTSubs.app',
+  description: "A simple, serverless API for providing easy access to a user's own YouTube subscriptions by wrapping the YouTube Data API",
+  icon: 'https://static.ytsubs.app/logo.png',
+  website: 'https://ytsubs.app',
+  github: 'https://github.com/derekantrican/ytsubs',
+  type: 'Website',
+  languages: [
+    'Python',
+  ],
+  technologies: [
+    'AWS',
   ],
 }];
