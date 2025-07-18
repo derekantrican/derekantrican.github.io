@@ -131,7 +131,7 @@ export const projects = [{
 {
   name : "YouTubarr",
   description : 'A full-stack app using Node.js, express.js, & React to poll for YouTube videos (via RSS feeds) and take action (alert, download, etc)',
-  icon: 'https://private-user-images.githubusercontent.com/1558019/465681656-dd9b42d8-08e9-4d9a-a175-acf7219d059a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI4NjEzNDEsIm5iZiI6MTc1Mjg2MTA0MSwicGF0aCI6Ii8xNTU4MDE5LzQ2NTY4MTY1Ni1kZDliNDJkOC0wOGU5LTRkOWEtYTE3NS1hY2Y3MjE5ZDA1OWEucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDcxOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA3MThUMTc1MDQxWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MWYwZWVhYmUyOTljOGU5NjE5NDRmYTNjZmY2ZTAwMzYzNTA3NGFiZmJhYzQ1MjA2MzAzYTc0MDFkOGRkNjUzNiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.ier7_Qaw3RMrRJNZLGW4ei9bVrdgWAlq_DnWCqljGGk',
+  icon: 'https://i.imgur.com/CymGLdK.png',
   github: 'https://github.com/derekantrican/youtubarr',
   type: 'Website',
   languages: [
