@@ -38,10 +38,10 @@ export function Blogs() {
 
   const sortPosts = (posts, sort) => {
     return posts.sort((a, b) => {
-      if (sort == 'Newest first') {
+      if (sort === 'Newest first') {
         return b.published.getTime() - a.published.getTime();
       }
-      else if (sort == 'Oldest first') {
+      else if (sort === 'Oldest first') {
         return a.published.getTime() - b.published.getTime();
       }
     })
@@ -49,7 +49,7 @@ export function Blogs() {
 
   const filterPosts = (labels, sort) => {
     setFilteredPosts(sortPosts(posts.filter(p => 
-      (labels.length == 0 || p.labels.intersection(labels).length > 0)
+      (labels.length === 0 || p.labels.intersection(labels).length > 0)
     ), sort));
   };
 

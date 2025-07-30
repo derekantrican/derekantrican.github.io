@@ -21,9 +21,9 @@ export function Projects() {
 
   const filterProjects = (languages, technologies, types) => {
     setProjects(project_data.projects.filter(p => 
-      (languages.length == 0 || p.languages.intersection(languages).length > 0) &&
-      (technologies.length == 0 || p.technologies.intersection(technologies).length > 0) &&
-      (types.length == 0 || types.includes(p.type))
+      (languages.length === 0 || p.languages.intersection(languages).length > 0) &&
+      (technologies.length === 0 || p.technologies.intersection(technologies).length > 0) &&
+      (types.length === 0 || types.includes(p.type))
     ));
   };
 
@@ -83,12 +83,12 @@ function ProjectCard(props) {
       <h3 style={{marginBottom: 0}}>{props.project.name}</h3>
       <div style={{display: 'flex'}}>{/*Todo: there's gotta be a better way to display the website/github icons*/}
         {props.project.website ?
-          <a style={{margin: 10}} href={props.project.website} target='_blank'>
+          <a style={{margin: 10}} href={props.project.website} target='_blank' rel='noreferrer'>
             <i style={{height: 30, width: 30, fontSize: '30px', color: 'white'}} className='bi bi-globe2'/>
           </a>  
         : null}
         {props.project.github ?
-          <a style={{margin: 10}} href={props.project.github} target='_blank'>
+          <a style={{margin: 10}} href={props.project.github} target='_blank' rel='noreferrer'>
             <i style={{height: 30, width: 30, fontSize: '30px', color: 'white'}} className='bi bi-github'/>
           </a>  
         : null}
@@ -100,7 +100,7 @@ function ProjectCard(props) {
           <div style={{display: 'flex', flexFlow: 'wrap'}}>
             {props.project.languages.map(lang =>
               <img style={{objectFit: 'contain', height: 40, width: 40}} 
-                src={project_data.languages.find(lang_data => lang_data.name == lang).icon}
+                src={project_data.languages.find(lang_data => lang_data.name === lang).icon}
                 title={lang}/>
             )}
           </div>
@@ -108,7 +108,7 @@ function ProjectCard(props) {
           <div style={{display: 'flex', flexFlow: 'wrap'}}>
             {props.project.technologies.map(tech =>
               <img style={{objectFit: 'contain', height: 40, width: 40}}
-                src={project_data.technologies.find(tech_data => tech_data.name == tech).icon}
+                src={project_data.technologies.find(tech_data => tech_data.name === tech).icon}
                 title={tech}/>
             )}
           </div>

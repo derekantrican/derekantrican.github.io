@@ -19,7 +19,7 @@ export function Sidebar(props) {
           </div>
         </Link>
         <div style={{display: 'flex', flexDirection: 'column', width: '100%', height: '100%'}}>
-          {pages.filter(p => p.title != 'Home' && !p.unlisted).map(page =>
+          {pages.filter(p => p.title !== 'Home' && !p.unlisted).map(page =>
             <NavBarLink key={page.title} name={page.title} path={page.path} selected={window.location.pathname.includes(page.path)}>
               {page.subpages ? page.subpages.map(subpage =>
                 <NavBarLink key={subpage.title} name={subpage.title} path={subpage.path} level='1'/> //Currently this only handles 1 level of subpages (not fully recursive)
@@ -56,7 +56,7 @@ export function HomePageNav() {
   return (
     <div style={{display: 'flex', flexDirection: 'column'}}>
       <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center'}}>
-        {pages.filter(p => (!p.level || p.level == 0) && p.title != 'Home' && !p.unlisted).map(page =>
+        {pages.filter(p => (!p.level || p.level === 0) && p.title !== 'Home' && !p.unlisted).map(page =>
           <Link key={page.title} style={navLinkStyle} to={page.path}>{page.title}</Link>
         )}
       </div>
@@ -90,7 +90,7 @@ function NavBarLink(props) {
   
 function Social(props) {
   return (
-    <a style={{color: 'white', margin: 20}} href={props.link} target='_blank'>
+    <a style={{color: 'white', margin: 20}} href={props.link} target='_blank' rel='noreferrer'>
       <i style={{height: 50, width: 50, fontSize: '50px'}} className={`bi bi-${props.icon}`}/>
     </a>
   );

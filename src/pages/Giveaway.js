@@ -54,7 +54,7 @@ export function Giveaway() {
         </div>
       </div>
       <div style={{display: 'flex', flexFlow: 'wrap'}}>
-        {items.length == 0 ?
+        {items.length === 0 ?
           <div style={{margin: 'auto'}}>Loading...</div>  
         : items.map(i => <Item key={i.url} url={i.url} description={i.description} requestItem={requestItem}/>)}
       </div>
