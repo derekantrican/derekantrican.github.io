@@ -1,0 +1,7 @@
+.birthday p, .birthday li {
+  font-size: 1.3rem;
+}
+
+.birthday li > p {
+  margin: 0px;
+}

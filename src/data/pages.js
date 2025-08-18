@@ -1,4 +1,5 @@
 import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife, Projects } from "../pages";
+import { Birthday } from "../pages/Birthday";
 import { Giveaway } from "../pages/Giveaway";
 import { HalalTips } from "../pages/HalalTips";
 import { TurkishResources } from "../pages/TurkishResources";
@@ -121,6 +122,13 @@ export const pages = [{
   path : '/giveaway',
   element: <Giveaway/>,
   wrapWithLayout: false,
+  unlisted: true,
+},
+{
+  title : 'Birthday freebies',
+  path : '/birthdayfreebies',
+  element: <Birthday/>,
+  wrapWithLayout: true,
   unlisted: true,
 },
 {
