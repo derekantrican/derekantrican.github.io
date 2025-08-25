@@ -20,7 +20,7 @@ export function Birthday() {
   - Papa Johns: website says "free dessert" but a reddit comment claims it might be a giant cookie
   - Great Harvest Bread: "free goodie"
   	- 1 free loaf or sandwich by signing up
-  - Jersey Mike's: similar to IHOP - enough "points" (that never expire) for a free sub
+  - Jersey Mike's: similar to IHOP - enough "points" (that never expire) for a free sub  *Must have bought a sub in the past year*
   - Black Bear Diner: free meal
   	- Also free meal for signing up
   - Dutch Bro's: free drink (must have the app)
