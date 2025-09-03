@@ -126,7 +126,7 @@ export const pages = [{
 },
 {
   title : 'Birthday freebies',
-  path : '/birthdayfreebies',
+  path : '/birthday',
   element: <Birthday/>,
   wrapWithLayout: true,
   unlisted: true,
