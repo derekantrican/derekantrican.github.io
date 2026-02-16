@@ -129,10 +129,10 @@ export const projects = [{
   ],
 },
 {
-  name : "YouTubarr",
+  name : "Subarr",
   description : 'A full-stack app using Node.js, express.js, & React to poll for YouTube videos (via RSS feeds) and take action (alert, download, etc)',
   icon: 'https://i.imgur.com/CymGLdK.png',
-  github: 'https://github.com/derekantrican/youtubarr',
+  github: 'https://github.com/derekantrican/subarr',
   type: 'Website',
   languages: [
     'Javascript',
@@ -154,5 +154,33 @@ export const projects = [{
   ],
   technologies: [
     'AWS',
+  ],
+},
+{
+  name: 'Opendak.app',
+  description: "An open-source alternative to DAKboard, providing a customizable dashboard for displaying information like calendar events, weather, news, etc",
+  icon: 'https://i.imgur.com/NNQBcrG.jpeg',
+  website: 'https://opendak.app',
+  github: 'https://github.com/derekantrican/opendak',
+  type: 'Website',
+  languages: [
+    'Javascript',
+  ],
+  technologies: [
+    'React',
+  ],
+},
+{
+  name: 'Readdit',
+  description: "An open-source, read-only reddit browser built with React, designed for quickly browsing reddit without the distractions of ads, tracking, and other non-reddit content",
+  icon: 'https://github.com/derekantrican/readdit/blob/master/public/logo256.png?raw=true',
+  website: 'https://readdit.app',
+  github: 'https://github.com/derekantrican/readdit',
+  type: 'Website',
+  languages: [
+    'Javascript',
+  ],
+  technologies: [
+    'React',
   ],
 }];
