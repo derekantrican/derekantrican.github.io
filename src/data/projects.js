@@ -183,4 +183,28 @@ export const projects = [{
   technologies: [
     'React',
   ],
+},
+{
+  name: 'ClockworkFramework',
+  description: "An automation framework for running individual tasks on their own intervals, written in C#",
+  icon: 'https://i.imgur.com/A9NUVZL.png',
+  github: 'https://github.com/derekantrican/ClockworkFramework',
+  type: 'Framework',
+  languages: [
+    'C#',
+  ],
+  technologies: [
+    'Visual Studio',
+  ],
+},
+{
+  name: 'OctoPrint-Webhooks',
+  description: "An OctoPrint plugin that makes 3D printer events call custom webhooks, enabling integration with services like Discord, Home Assistant, and more",
+  icon: 'https://octoprint.org/assets/img/logo.png',
+  github: 'https://github.com/derekantrican/OctoPrint-Webhooks',
+  type: 'Plugin',
+  languages: [
+    'Python',
+  ],
+  technologies: [],
 }];
