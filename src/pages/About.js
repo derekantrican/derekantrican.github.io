@@ -11,7 +11,7 @@ export function About() {
 
   I'm a software developer by profession and hobby, with a passion for building programs that simplify or automate workflows.
 
-  I currently work as a Software Engineer for Microsoft on the Office Engineering team, creating tools to support those who work on Office products.
+  I previously worked as a Software Engineer for Microsoft on the Office Engineering team, creating tools to support those who work on Office products.
 
   I also like the outdoors: rock climbing, camping, hiking ([PCT 2015](${baseUrl()}/blogs)), etc!
 

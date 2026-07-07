@@ -1,4 +1,4 @@
-import { About, Blogs, Calendar, Hobbies, Home, ProfessionalLife, Projects } from "../pages";
+import { About, Blogs, Calendar, Hobbies, Home, Projects } from "../pages";
 import { Birthday } from "../pages/Birthday";
 import { Giveaway } from "../pages/Giveaway";
 import { HalalTips } from "../pages/HalalTips";
@@ -33,20 +33,6 @@ export const pages = [{
     }
   },
   subpages : [{
-      title : 'Professional life',
-      path : '/about/professionallife',
-      element : <ProfessionalLife/>,
-      wrapWithLayout : true,
-      meta : {
-        description: "Derek Antrican's professional life",
-        meta: {
-          property: {
-            //Todo: og:image
-          }
-        }
-      },
-    },
-    {
       title : 'Hobbies',
       path : '/about/hobbies',
       element : <Hobbies/>,
