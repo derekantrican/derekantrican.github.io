@@ -20,14 +20,8 @@
         "icon": "https://cdn.iconscout.com/icon/free/png-512/discord-3-569463.png",
         "url": "https://discord.com/app"
     },
-    {
-        "icon": "https://i.imgur.com/YHoEXzZ.png",
-        "url": "https://dev.azure.com/office/Office/_git/Office?path=%2Fcloudbuildtools%2FSynthetics%2FDashboard.md&version=GBofficial%2Fengtools&_a=preview"
-    },
-    {
-        "icon": "https://i.imgur.com/XQvXQ0v.png",
-        "url": "https://office.visualstudio.com/OE/_queries/query/ab4c4fe2-d35f-41a4-b26d-aae528b7ca50"
-    },
+    null,
+    null,
     {
         "icon": "http://i.imgur.com/1xHt3u7.png",
         "url": "http://www.youtube.com/feed/subscriptions"
@@ -49,14 +43,8 @@
         "icon": "https://i.imgur.com/1vqxqJH.png",
         "url": "https://github.com/derekantrican"
     },
-    {
-        "icon": "https://i.imgur.com/52ka15m.png",
-        "url": "https://office.visualstudio.com/OE/_queries/query/70358cec-cd29-4f32-85b2-ad5be04f0e01"
-    },
-    {
-        "icon": "https://i.imgur.com/AyURTQj.png",
-        "url": "https://office.visualstudio.com/OE/_sprints/taskboard/ENG%20-%20Office%20Build"
-    },
+    null,
+    null,
     null,
     {
         "icon": "https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png",
@@ -78,14 +66,8 @@
         "icon": "https://octoprint.org/assets/img/logo.png",
         "url": "http://octoprint.derekantrican.com"
     },
-    {
-        "icon": "https://i.imgur.com/yElntqn.png",
-        "url": "https://office.visualstudio.com/OE/_dashboards/dashboard/1ae8cbf2-b32e-42bb-b780-5861d8aa4c76"
-    },
-    {
-        "icon": "https://i.imgur.com/QC5uJFC.png",
-        "url": "https://office.visualstudio.com/OE/_queries/query/a2af64e9-6e36-4738-bc0b-58d2425cc579"
-    },
+    null,
+    null,
     {
         "icon": "https://onlinebanking.becu.org/BECUBankingWeb/images/becu-logo-desktop.png",
         "url": "https://onlinebanking.becu.org/BECUBankingWeb/login.aspx"
@@ -110,11 +92,8 @@
         "icon": "https://i.imgur.com/EHtREvx.png",
         "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZHen0asRbQyQiEUE9EhfgPLQN0P-ecLOiTH7sBlcKtJ-BWWnrsk4Fkhpi8OKmvkfA2ZRn1v8FrI8C/pubhtml?gid=1669547735&single=true&chrome=false&widget=false&headers=false"
     },
+    null,
     {
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png",
-        "url": "https://ms.portal.azure.com"
-    },
-        {
         "icon": "http://i.imgur.com/OyHx49J.jpg",
         "url": "https://www.wunderground.com/weather/us/wa/kirkland"
     }
