@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { findRecipeBySlug } from '../data/recipes';
 import { InlineMarkdown } from '../components/InlineMarkdown';
+import { NotesMarkdown } from '../components/NotesMarkdown';
 import '../styles/recipePrint.css';
 
 export function RecipePrint() {
@@ -82,7 +83,7 @@ export function RecipePrint() {
       {showNotes && recipe.notes ?
         <>
           <h2>Notes</h2>
-          <p><InlineMarkdown>{recipe.notes}</InlineMarkdown></p>
+          <NotesMarkdown>{recipe.notes}</NotesMarkdown>
         </>
       : null}
 

@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { findRecipeBySlug, toSlug } from '../data/recipes';
 import { useIsMobile } from '../hooks/isMobile';
 import { InlineMarkdown } from '../components/InlineMarkdown';
+import { NotesMarkdown } from '../components/NotesMarkdown';
 import '../styles/recipes.css';
 import '../styles/recipeDetail.css';
 
@@ -61,7 +62,7 @@ export function RecipeDetail() {
         {recipe.notes ?
           <>
             <h2>Notes</h2>
-            <p><InlineMarkdown>{recipe.notes}</InlineMarkdown></p>
+            <NotesMarkdown>{recipe.notes}</NotesMarkdown>
           </>
         : null}
       </div>
