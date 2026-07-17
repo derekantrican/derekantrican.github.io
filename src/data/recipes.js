@@ -13,7 +13,7 @@ export function findRecipeBySlug(slug) {
 export const recipes = [{
   name: "Pulled Pork",
   description: "Dutch-oven pulled pork rubbed with brown sugar and smoked paprika, braised low and slow, then tossed in a tangy ketchup-mustard barbecue sauce.",
-  image: "/recipes/pulled-pork.jpg",
+  image: "/images/recipes/pulled-pork.jpg",
   prepTime: "20 min",
   cookTime: "5 hr",
   totalTime: "5 hr 20 min",
@@ -55,7 +55,7 @@ export const recipes = [{
 {
   name: "Creamy Pesto Baked Gnocchi and Chicken Skillet",
   description: "A one-skillet bake of seared chicken, gnocchi, and grape tomatoes finished with pesto and melted mozzarella.",
-  image: "/recipes/chicken-gnocchi.jpg",
+  image: "/images/recipes/chicken-gnocchi.jpg",
   prepTime: "15 min",
   cookTime: "30 min",
   totalTime: "45 min",
@@ -95,7 +95,7 @@ export const recipes = [{
 {
   name: "Garlic Brown Sugar Glazed Salmon",
   description: "Salmon baked in foil with a garlicky honey-brown sugar glaze, then broiled until caramelized.",
-  image: "/recipes/brown-sugar-salmon.jpg",
+  image: "/images/recipes/brown-sugar-salmon.jpg",
   prepTime: "5 min",
   cookTime: "25 min",
   totalTime: "30 min",
@@ -132,7 +132,7 @@ export const recipes = [{
 {
   name: "Creamy Vegan Mushroom Risotto",
   description: "A dairy-free, gluten-free mushroom risotto that's still rich and creamy thanks to nutritional yeast and a good mantecatura finish.",
-  image: "/recipes/vegan-mushroom-risotto.jpg",
+  image: "/images/recipes/vegan-mushroom-risotto.jpg",
   prepTime: "10 min",
   cookTime: "30 min",
   totalTime: "40 min",
@@ -165,7 +165,7 @@ export const recipes = [{
 {
   name: "Chewy English Toffee Cookies",
   description: "Tender, chewy, buttery cookies loaded with English toffee bits.",
-  image: "/recipes/toffee-cookies.jpg",
+  image: "/images/recipes/toffee-cookies.jpg",
   prepTime: "15 min",
   cookTime: "10 min",
   totalTime: "25 min",
@@ -201,7 +201,7 @@ export const recipes = [{
 {
   name: "Lobster Ravioli Pink Sauce",
   description: "A quick creamy tomato sauce for store-bought lobster ravioli — ready in 15 minutes.",
-  image: "/recipes/pink-sauce.jpg",
+  image: "/images/recipes/pink-sauce.jpg",
   prepTime: "5 min",
   cookTime: "10 min",
   totalTime: "15 min",
@@ -241,7 +241,7 @@ export const recipes = [{
 {
   name: "Authentic Chimichurri",
   description: "A vibrant, herby oil-based condiment from Uruguay and Argentina, traditionally spooned over grilled meats.",
-  image: "/recipes/chimichurri.jpg",
+  image: "/images/recipes/chimichurri.jpg",
   prepTime: "10 min",
   cookTime: "0 min",
   totalTime: "10 min",
@@ -271,7 +271,7 @@ export const recipes = [{
 {
   name: "Easy No-Fuss Thanksgiving Turkey",
   description: "A foolproof roast turkey with an herb butter rubbed under the skin, no basting required.",
-  image: "/recipes/thanksgiving-turkey.jpg",
+  image: "/images/recipes/thanksgiving-turkey.jpg",
   prepTime: "20 min",
   cookTime: "3 hr 30 min",
   totalTime: "3 hr 50 min",
@@ -311,7 +311,7 @@ export const recipes = [{
 {
   name: "Turkey Gravy",
   description: "A simple pan gravy built from roast turkey drippings and a flour roux.",
-  image: "/recipes/turkey-gravy.jpg",
+  image: "/images/recipes/turkey-gravy.jpg",
   prepTime: "10 min",
   cookTime: "10 min",
   totalTime: "20 min",
@@ -340,7 +340,7 @@ export const recipes = [{
 {
   name: "Crispy Slow Cooker Corned Beef",
   description: "Slow cooker corned beef with a crisp, browned top — juicy inside with minimal hands-on effort.",
-  image: "/recipes/corned-beef.jpg",
+  image: "/images/recipes/corned-beef.jpg",
   prepTime: "5 min",
   cookTime: "9 hr",
   totalTime: "9 hr 5 min",
@@ -370,7 +370,7 @@ export const recipes = [{
 {
   name: "Kalbi (Korean BBQ Short Ribs)",
   description: "Korean-style flanken-cut short ribs marinated in a sweet soy-garlic-pear marinade and grilled fast and hot.",
-  image: "/recipes/kalbi-short-ribs.jpg",
+  image: "/images/recipes/kalbi-short-ribs.jpg",
   prepTime: "20 min",
   cookTime: "8 min",
   totalTime: "4 hr 28 min",
@@ -405,7 +405,7 @@ export const recipes = [{
 {
   name: "Karniyarik (Turkish Stuffed Eggplant)",
   description: "Roasted whole eggplants stuffed with a spiced ground beef, tomato, and pepper filling, finished in a light tomato sauce.",
-  image: "/recipes/karniyarik.jpg",
+  image: "/images/recipes/karniyarik.jpg",
   prepTime: "30 min",
   cookTime: "50 min",
   totalTime: "1 hr 20 min",
@@ -446,7 +446,7 @@ export const recipes = [{
 {
   name: "Pork Medallions with Maple-Balsamic Sauce",
   description: "Seared pork tenderloin medallions in a quick maple-balsamic pan sauce.",
-  image: "/recipes/maple-balsamic-pork-chops.jpg",
+  image: "/images/recipes/maple-balsamic-pork-chops.jpg",
   prepTime: "10 min",
   cookTime: "20 min",
   totalTime: "30 min",
@@ -481,7 +481,7 @@ export const recipes = [{
 {
   name: "Honey Garlic Pork Chops",
   description: "Seared pork chops in a quick sweet-savory honey garlic pan sauce, finished under the broiler.",
-  image: "/recipes/honey-garlic-pork-chops.jpg",
+  image: "/images/recipes/honey-garlic-pork-chops.jpg",
   prepTime: "10 min",
   cookTime: "12 min",
   totalTime: "22 min",
@@ -514,7 +514,7 @@ export const recipes = [{
 {
   name: "Slow Cooker Chicken Chili",
   description: "A mildly spiced, creamy slow cooker chicken chili with black beans and corn — no pre-cooking required.",
-  image: "/recipes/slow-cooker-chicken-chili.jpg",
+  image: "/images/recipes/slow-cooker-chicken-chili.jpg",
   prepTime: "10 min",
   cookTime: "8 hr",
   totalTime: "8 hr 10 min",
@@ -551,7 +551,7 @@ export const recipes = [{
 {
   name: "Herbed Chicken with Beets and Brussels Sprouts",
   description: "A whole chicken slow-cooked over celery, onion, and root vegetables, with a simple mustard pan sauce made from the cooking juices.",
-  image: "/recipes/herbed-chicken.jpg",
+  image: "/images/recipes/herbed-chicken.jpg",
   prepTime: "20 min",
   cookTime: "8 hr",
   totalTime: "8 hr 20 min",
@@ -624,7 +624,7 @@ export const recipes = [{
 {
   name: "Fried Rice",
   description: "A quick 10-minute egg fried rice made from day-old rice — a great way to use up leftovers.",
-  image: "/recipes/fried-rice.jpg",
+  image: "/images/recipes/fried-rice.jpg",
   prepTime: "2 min",
   cookTime: "8 min",
   totalTime: "10 min",
@@ -652,7 +652,7 @@ export const recipes = [{
 {
   name: "Cinnamon Apple Pork Chops",
   description: "Pan-seared pork chops topped with a warm cinnamon-apple-pecan sauté — an easy fall dinner.",
-  image: "/recipes/cinnamon-apple-pork-chops.jpg",
+  image: "/images/recipes/cinnamon-apple-pork-chops.jpg",
   prepTime: "8 min",
   cookTime: "20 min",
   totalTime: "28 min",
@@ -683,7 +683,7 @@ export const recipes = [{
 {
   name: "Frittata",
   description: "A flexible master frittata recipe — whisked eggs baked with cheese and vegetables, adaptable to a full frittata, a casserole, or mini muffin-cup versions.",
-  image: "/recipes/frittata.jpg",
+  image: "/images/recipes/frittata.jpg",
   prepTime: "20 min",
   cookTime: "25 min",
   totalTime: "45 min",
@@ -715,7 +715,7 @@ export const recipes = [{
 {
   name: "Menemen",
   description: "Turkish-style soft scrambled eggs cooked with tomatoes, peppers, and onion — a one-pan dish good for any meal.",
-  image: "/recipes/menemen.jpg",
+  image: "/images/recipes/menemen.jpg",
   prepTime: "10 min",
   cookTime: "15 min",
   totalTime: "25 min",
@@ -750,7 +750,7 @@ export const recipes = [{
 {
   name: "Cinnamon French Toast Sticks",
   description: "Classic French toast cut into dippable sticks, coated in a cinnamon-vanilla custard.",
-  image: "/recipes/french-toast-sticks.jpg",
+  image: "/images/recipes/french-toast-sticks.jpg",
   prepTime: "10 min",
   cookTime: "10 min",
   totalTime: "20 min",
@@ -784,7 +784,7 @@ export const recipes = [{
 {
   name: "French Toast Casserole",
   description: "A make-ahead baked French toast casserole with a cinnamon-brown sugar syrup baked right into the bread.",
-  image: "/recipes/french-toast-casserole.jpg",
+  image: "/images/recipes/french-toast-casserole.jpg",
   prepTime: "15 min",
   cookTime: "45 min",
   totalTime: "1 hr",
@@ -820,7 +820,7 @@ export const recipes = [{
 {
   name: "Easy Chicken Rice Soup",
   description: "A well-balanced chicken and rice soup loaded with vegetables and tender shredded chicken.",
-  image: "/recipes/chicken-and-rice-soup.jpg",
+  image: "/images/recipes/chicken-and-rice-soup.jpg",
   prepTime: "10 min",
   cookTime: "45 min",
   totalTime: "55 min",
@@ -897,7 +897,7 @@ export const recipes = [{
 {
   name: "Dairy-Free Chicken Corn Chowder",
   description: "A creamy, dairy-free and gluten-free corn chowder thickened with blended potatoes and coconut milk instead of cream and flour.",
-  image: "/recipes/dairy-free-chicken-corn-chowder.jpg",
+  image: "/images/recipes/dairy-free-chicken-corn-chowder.jpg",
   prepTime: "15 min",
   cookTime: "40 min",
   totalTime: "55 min",
@@ -937,7 +937,7 @@ export const recipes = [{
 {
   name: "Liège Belgian Waffles with Pearl Sugar",
   description: "Rich, chewy Belgian waffles made from an enriched yeasted dough studded with pearl sugar that caramelizes on the iron.",
-  image: "/recipes/liege-waffles.jpg",
+  image: "/images/recipes/liege-waffles.jpg",
   prepTime: "50 min",
   cookTime: "20 min",
   totalTime: "1 hr 10 min",
