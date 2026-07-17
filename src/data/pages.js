@@ -1,8 +1,10 @@
-import { About, Blogs, Calendar, Hobbies, Home, Projects } from "../pages";
+import { About, Blogs, Calendar, Hobbies, Home, Projects, Recipes } from "../pages";
 import { Birthday } from "../pages/Birthday";
 import { Giveaway } from "../pages/Giveaway";
 import { HalalTips } from "../pages/HalalTips";
 import { TurkishResources } from "../pages/TurkishResources";
+import { RecipeDetail } from "../pages/RecipeDetail";
+import { RecipePrint } from "../pages/RecipePrint";
 
 export const pages = [{
   title : 'Home',
@@ -74,6 +76,35 @@ export const pages = [{
       }
     }
   },
+},
+{
+  title : 'Recipes',
+  path : '/recipes',
+  element : <Recipes/>,
+  wrapWithLayout : true,
+  hideFromHomeNav : true,
+  meta : {
+    description: "Derek Antrican's recipes",
+    meta: {
+      property: {
+        //Todo: og:image
+      }
+    }
+  },
+},
+{
+  title : 'Recipe Detail',
+  path : '/recipes/:slug',
+  element : <RecipeDetail/>,
+  wrapWithLayout : true,
+  unlisted : true,
+},
+{
+  title : 'Print Recipe',
+  path : '/recipes/:slug/print',
+  element : <RecipePrint/>,
+  wrapWithLayout : false,
+  unlisted : true,
 },
 {
   title : 'Blogs',

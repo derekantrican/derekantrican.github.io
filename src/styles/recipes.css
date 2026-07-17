@@ -1,0 +1,31 @@
+.recipes p {
+  font-size: 1.1rem;
+}
+
+.recipes a {
+  color: #8ecfff;
+}
+
+.recipeSearch {
+  width: 300px;
+  max-width: calc(100% - 20px);
+  margin: 10px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.recipeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #6f6f6f;
+  color: white;
+  border-radius: 12px;
+  padding: 3px 10px;
+  margin: 3px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}

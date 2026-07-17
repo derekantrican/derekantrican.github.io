@@ -56,7 +56,7 @@ export function HomePageNav() {
   return (
     <div style={{display: 'flex', flexDirection: 'column'}}>
       <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center'}}>
-        {pages.filter(p => (!p.level || p.level === 0) && p.title !== 'Home' && !p.unlisted).map(page =>
+        {pages.filter(p => (!p.level || p.level === 0) && p.title !== 'Home' && !p.unlisted && !p.hideFromHomeNav).map(page =>
           <Link key={page.title} style={navLinkStyle} to={page.path}>{page.title}</Link>
         )}
       </div>

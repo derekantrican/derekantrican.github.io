@@ -1,0 +1,139 @@
+/* This page always renders light/ink-friendly, regardless of the site's dark color-scheme meta tag
+   (without this, native form controls like the print button default to dark-theme styling). */
+.recipePrint {
+  color-scheme: light;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background: white;
+  color: #222;
+  font-family: Georgia, serif;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.recipePrint .printToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.recipePrint .printOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.recipePrint .printOptions label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.recipePrint .printTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 6px;
+  background: #f2f2f2;
+  color: #222;
+}
+
+.recipePrint .printTrigger:hover {
+  background: #e4e4e4;
+}
+
+.recipePrint h1 {
+  margin-bottom: 5px;
+}
+
+.recipePrint .description {
+  color: #555;
+  margin-top: 0;
+}
+
+.recipePrint img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+.recipePrint .metaBar {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  margin: 20px 0;
+  padding: 12px 0;
+  font-family: Arial, sans-serif;
+}
+
+.recipePrint .metaItem {
+  flex: 1 1 0;
+  min-width: 100px;
+  text-align: center;
+  padding: 4px 10px;
+  border-right: 1px solid #ddd;
+}
+
+.recipePrint .metaItem:last-child {
+  border-right: none;
+}
+
+.recipePrint .metaLabel {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #777;
+}
+
+.recipePrint .metaValue {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #111;
+  margin-top: 2px;
+}
+
+.recipePrint li {
+  margin-bottom: 6px;
+  page-break-inside: avoid;
+}
+
+.recipePrint .source {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #555;
+  word-break: break-all;
+}
+
+.recipePrint .source a {
+  color: #555;
+}
+
+.recipePrint a {
+  color: #1a5fb4;
+}
+
+@media print {
+  .recipePrint .printToolbar {
+    display: none;
+  }
+
+  .recipePrint {
+    padding: 0;
+  }
+}
