@@ -132,6 +132,23 @@
         );
       }
 
+      async function fetchLemmyBackground() {
+        try {
+          const response = await fetch('https://lemmy.ml/api/v3/post/list?community_name=earthporn&sort=Hot&limit=50');
+          const data = await response.json();
+
+          return data.posts
+            .filter(p => {
+              const d = p.image_details;
+              return !p.post.nsfw && !p.post.removed && !p.post.deleted && p.post.url && d && d.width > d.height;
+            })
+            .map(p => p.post.url);
+        } catch (e) {
+          console.error('Failed to fetch Lemmy posts for background:', e);
+          return [];
+        }
+      }
+
       function App() {
         const [shortcuts, setShortcuts] = useState(null);
         const [background, setBackground] = useState(null);
@@ -143,35 +160,6 @@
           async function populateShortcuts() {
             const response = await fetch('https://derekantrican.com/shortcuts.json');
             setShortcuts(await response.json());
-          };
-
-          async function setBackgroundImage() {
-            try {
-              const response = await fetch('https://cors.derekantrican.com/https://www.reddit.com/r/EarthPorn/hot.rss?limit=10', {
-                headers: { 'User-Agent': 'EarthPornWallpaper/1.0' }
-              });
-              const text = await response.text();
-              const parser = new DOMParser();
-              const xml = parser.parseFromString(text, 'application/xml');
-              const entries = xml.querySelectorAll('entry');
-              
-              // Extract i.redd.it URLs from entry content, filter to landscape images
-              const imageUrls = [];
-              entries.forEach(entry => {
-                const content = entry.querySelector('content')?.textContent || '';
-                // Look for direct i.redd.it links
-                const directMatch = content.match(/href="(https?:\/\/i\.redd\.it\/[^"]+)"/);
-                if (directMatch) {
-                  imageUrls.push(directMatch[1]);
-                }
-              });
-
-              if (imageUrls.length > 0) {
-                setBackground(imageUrls[Math.floor(Math.random() * imageUrls.length)]);
-              }
-            } catch (e) {
-              console.error('Failed to fetch Reddit RSS for background:', e);
-            }
           };
 
           async function getTodoistTasks() {
@@ -199,9 +187,20 @@
           }
 
           populateShortcuts();
-          setBackgroundImage();
           getTodoistTasks();
-        }, []);     
+        }, []);
+
+        useEffect(() => {
+          async function updateBackground() {
+            const imageUrls = await fetchLemmyBackground();
+
+            if (imageUrls.length > 0) {
+              setBackground(imageUrls[Math.floor(Math.random() * imageUrls.length)]);
+            }
+          }
+
+          updateBackground();
+        }, []);
 
         const completeTodoistTask = async (id) => {
           const response = await fetch(`https://api.todoist.com/api/v1/tasks/${id}/close`, {
