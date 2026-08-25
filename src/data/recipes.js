@@ -610,7 +610,7 @@ export const recipes = [{
   instructions: [
     "Mix together all ingredients except crescent rolls, egg white, & almonds",
     "Unroll rolls without separating. Lay crescent roll sheets next to each other (long sides together) on a baking sheet",
-    "Spread filling on top, then lift and twist strips together - pairing long sides with the opposite \"tip\" (reference: https://i.imgur.com/K6TXY3n.png)",
+    "Spread filling on top, then lift and twist strips together - pairing long sides with the opposite \"tip\" ([reference image](https://i.imgur.com/K6TXY3n.png))",
     "Brush on egg white & sprinkle almonds",
     "Bake for 25 minutes, until golden brown",
   ],
