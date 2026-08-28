@@ -19,7 +19,7 @@ export function Birthday() {
   
   
   ## Only available on birthday:
-  - **Starbucks** free drink or treat
+  - **Starbucks** free drink or treat (if you have a certain number of stars in your account, you can actually claim this a couple days outside of your birthday)
   - **Mercury's Coffee** free drink (they have a loyalty program, but there doesn't appear to be any points added for your birthday. Instead, they just recommend going to any location in person & telling them it's your birthday)
   - **Jamba** free smoothie *Note: 15 point ($15) account balance minimum required BUT if you just go in and play dumb you may be able to get it anyway (often they ask for you to scan with the app and if you don't have the app they often just skip any other verification)*
   
@@ -28,18 +28,18 @@ export function Birthday() {
   - **Auntie Anne's** free pretzel *(You need to have spent $10 within the year or you don't get it)*
   - **Panera** free pastry
   - **Cold Stone** $5 birthday credit
-  - **Nothing Bundt Cakes** free bundtlet (they don't scan anything, they just ask to see the email. So you may be able to redeem the same reward at multiple locations)
+  - **Nothing Bundt Cakes** free bundtlet
   - **Baskin Robbins** free kid's scoop
-  - **Cinnabon** free treat *Note: the treat may change from year to year*
+  - **Cinnabon** free treat *Note: the treat may change from year to year, but it seems to always be "cold brew" from my experience*
   
   ## Available for 2-3 weeks after birthday:
-  - **Arby's** free dessert (ONLINE ONLY)
+  - **Arby's** free dessert with any purchase (ONLINE ONLY)
   - **Carl's Jr** free sandwich with $15 purchase
   
   ## Available entire birthday month (or for a month after your birthday):
   - **Red Robin** free burger with $4.99 purchase
   - **Qdoba** free queso & chips
-  - **PF Chang's** free appetizer or dessert of your choice (I think they have one appetizer that's ribs so it's basically a meal)
+  - **PF Chang's** free appetizer or dessert of your choice (I think they have one appetizer that's 6 ribs so it's basically a meal) **NOTE: in 2026, this seemed to start being "the month leading up to your birthday" instead of truly "your birthday month"**
   - **Taco Bell** free Baja Blast Freeze
   - **Denny's** free grand slam
   - **Buffalo Wild Wings** Free 6 count wings
