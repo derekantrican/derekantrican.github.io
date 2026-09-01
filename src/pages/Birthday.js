@@ -37,7 +37,7 @@ export function Birthday() {
   - **Carl's Jr** free sandwich with $15 purchase
   
   ## Available entire birthday month (or for a month after your birthday):
-  - **Red Robin** free burger with $4.99 purchase
+  - **Red Robin** "Surprise & Delight" with $4.99 purchase *(in 2026, Red Robin drastically changed their birthday reward. You only get the "birthday burger" if you have spent $10 in the months leading up to your birthday. Otherwise you get a smaller reward, like a milkshake, still requiring the $4.99 purchase to redeem)
   - **Qdoba** free queso & chips
   - **PF Chang's** free appetizer or dessert of your choice (I think they have one appetizer that's 6 ribs so it's basically a meal) **NOTE: in 2026, this seemed to start being "the month leading up to your birthday" instead of truly "your birthday month"**
   - **Taco Bell** free Baja Blast Freeze
