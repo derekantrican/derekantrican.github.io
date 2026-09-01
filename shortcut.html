@@ -163,26 +163,35 @@
           };
 
           async function getTodoistTasks() {
+            if (!todoistApiKey) {
+              return;
+            }
+
             // API v1 uses /tasks/filter with 'query' param and returns paginated { results, next_cursor }
             let allTasks = [];
             let cursor = null;
             do {
               let url = 'https://api.todoist.com/api/v1/tasks/filter?limit=200&query=' + encodeURIComponent('@SELECTED_TODAY & today') /*this is not the 'exact' SELECTED_TODAY filter, but close*/;
-              
-              if (cursor) 
+
+              if (cursor)
                 url += '&cursor=' + encodeURIComponent(cursor);
-              
+
               const response = await fetch(url, {
                 headers: {
                   'Authorization' : `Bearer ${todoistApiKey}`,
                 },
               });
               const data = await response.json();
-              console.log(data);
+
+              if (!response.ok || !Array.isArray(data.results)) {
+                console.error('Failed to fetch Todoist tasks:', data);
+                break;
+              }
+
               allTasks = allTasks.concat(data.results);
               cursor = data.next_cursor;
             } while (cursor);
-            
+
             setTasks(allTasks);
           }
 
@@ -231,7 +240,7 @@
                     <div style={{display: 'flex', flexDirection: 'row', backgroundColor: '#e44232', padding: 10, borderRadius: 10, margin: 5}}>
                       <input ref={todoistApiKeyBox} style={{backgroundColor: 'white', color: '#e44232', width: '100%', marginRight: 5}} type='text' placeholder='Insert Todoist API key'/>
                       <button style={{height: 30, width: 40}} onClick={() => { localStorage.setItem('todoistApiKey', todoistApiKeyBox.current.value); window.location.reload();}}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-send" viewBox="0 0 16 16">
                           <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" transform ="rotate(43, 4, 4)"/>
                         </svg>
                       </button>
