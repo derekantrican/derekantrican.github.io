@@ -26,6 +26,7 @@ export function Birthday() {
   
   ## Available for a week after birthday (and sometimes available starting a week before your birthday as well):
   - **Auntie Anne's** free pretzel *(You need to have spent $10 within the year or you don't get it)*
+  - **Wetzel's Pretzels** $5 credit
   - **Panera** free pastry
   - **Cold Stone** $5 birthday credit
   - **Nothing Bundt Cakes** free bundtlet
@@ -46,9 +47,9 @@ export function Birthday() {
   - **Sonic** free small shake with purchase
   - **A&W** free root beer float
   - **Krispy Kreme** free 3 glazed donuts
-  - **Wetzel's Pretzels** free pretzel
   - **Black Bear Diner** free "Bear's Choice Breakfast" ("choice" as in - you can choose pancakes/french toast/waffles/etc)
   - **Great Harvest Bread** Free "Goodie"
+  - **Shake Shack** Free shake
   
   ## Available for longer than a month:
   - **IHOP** *technically, IHOP gives you 5 "pancoins", but they can be redeemed for a voucher for a stack of pancakes that is good for a year*
