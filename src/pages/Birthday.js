@@ -19,7 +19,7 @@ export function Birthday() {
   
   
   ## Only available on birthday:
-  - **Starbucks** free drink or treat (if you have a certain number of stars in your account, you can actually claim this a couple days outside of your birthday)
+  - **Starbucks** free drink or treat *if you have made a purchase in the last year - though you can usually play dumb on this one too* (if you have a certain number of stars in your account, you can actually claim this a couple days outside of your birthday)
   - **Mercury's Coffee** free drink (they have a loyalty program, but there doesn't appear to be any points added for your birthday. Instead, they just recommend going to any location in person & telling them it's your birthday)
   - **Jamba** free smoothie *Note: 15 point ($15) account balance minimum required BUT if you just go in and play dumb you may be able to get it anyway (often they ask for you to scan with the app and if you don't have the app they often just skip any other verification)*
   
@@ -40,7 +40,7 @@ export function Birthday() {
   ## Available entire birthday month (or for a month after your birthday):
   - **Red Robin** "Surprise & Delight" with $4.99 purchase *(in 2026, Red Robin drastically changed their birthday reward. You only get the "birthday burger" if you have spent $10 in the months leading up to your birthday. Otherwise you get a smaller reward, like a milkshake, still requiring the $4.99 purchase to redeem)
   - **Qdoba** free queso & chips
-  - **PF Chang's** free appetizer or dessert of your choice (I think they have one appetizer that's 6 ribs so it's basically a meal) **NOTE: in 2026, this seemed to start being "the month leading up to your birthday" instead of truly "your birthday month"**
+  - **PF Chang's** free appetizer or dessert of your choice (I think they have one appetizer that's 6 ribs so it's basically a meal)
   - **Taco Bell** free Baja Blast Freeze
   - **Denny's** free grand slam
   - **Buffalo Wild Wings** Free 6 count wings
