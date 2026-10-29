@@ -143,6 +143,21 @@ export const projects = [{
   ],
 },
 {
+  name: 'Budgett',
+  description: 'A self-hosted, full-stack budget app using Node.js, express.js, & React that automatically imports transactions via Plaid, with auto-categorization rules, formula-based budgets, and a customizable dashboard',
+  icon: 'https://github.com/derekantrican/Budgett/blob/master/client/public/logo512.png?raw=true',
+  website: 'https://derekantrican.com/Budgett',
+  github: 'https://github.com/derekantrican/Budgett',
+  type: 'Website',
+  languages: [
+    'Javascript',
+  ],
+  technologies: [
+    'Node.js',
+    'React',
+  ],
+},
+{
   name: 'YTSubs.app',
   description: "A simple, serverless API for providing easy access to a user's own YouTube subscriptions by wrapping the YouTube Data API",
   icon: 'https://static.ytsubs.app/logo.png',
